@@ -58,7 +58,6 @@ public class Robot extends TimedRobot {
    * You can use it to reset any subsystem information you want to clear when
    * the robot is disabled.
    */
-  //yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeehaaaaw
   @Override
   public void disabledInit() {
   }
