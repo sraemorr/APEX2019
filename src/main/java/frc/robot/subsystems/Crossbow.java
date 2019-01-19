@@ -3,5 +3,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Crossbow extends Subystem{
 
-    public void initDefaultCommand(){}
+    public void initDefaultCommand(){
+        
+    }
 }
