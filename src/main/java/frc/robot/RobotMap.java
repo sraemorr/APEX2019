@@ -32,7 +32,7 @@ public class RobotMap {
   public static VictorSPX Lift2;
   public static VictorSPX Lift3;
 //intake/eater stuff
-  public static TalonSRX Eater;
+  public static TalonSRX Intake;
 //S.T.I.C.C.S. stuff
   public static TalonSRX Sticc1;
   public static VictorSPX Sticc2;
@@ -44,6 +44,45 @@ public class RobotMap {
 //stair climber stuff
 public static DoubleSolenoid Stair1;
 public static DoubleSolenoid Stair2;
+
+
+
+
+public static void init(){
+     System.out.println("Initializing Speed Controllers");
+//left side drive base
+L1 = new TalonSRX(PortMap.L1);
+L2 = new VictorSPX(PortMap.L2);
+L2.follow(L1);
+L3 = new VictorSPX(PortMap.L3);
+L3.follow(L1);
+//right side drive base
+R1 = new TalonSRX(PortMap.R1);
+R2 = new VictorSPX(PortMap.R2);
+R2.follow(R1);
+R3 = new VictorSPX(PortMap.R3);
+R3.follow(R1);
+//lift stuff
+Lift1 = new TalonSRX(PortMap.Lift1);
+Lift2 = new VictorSPX(PortMap.Lift2);
+Lift2.follow(Lift1);
+Lift3 = new VictorSPX(PortMap.Lift3);
+Lift3.follow(Lift1);
+//intake stuff
+Intake = new TalonSRX(PortMap.Intake);
+//sticcs stuff
+Sticc1 = new TalonSRX(PortMap.Sticc1);
+Sticc2 = new VictorSPX(PortMap.Sticc2);
+Sticc2.follow(Sticc1);
+//crossbow stuff
+Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
+Crossbow2 = new DoubleSolenoid(PortMap.Crossbow2_Forward_Channel, PortMap.Crossbow2_Reverse_Channel);
+//stair stepper stuff
+Stair1 = new DoubleSolenoid(PortMap.Stair1_Forward_Channel, PortMap.Stair1_Reverse_Channel);
+Stair2 = new DoubleSolenoid(PortMap.Stair2_Forward_Channel, PortMap.Stair2_Reverse_Channel);
+
+
+}
 
 
 

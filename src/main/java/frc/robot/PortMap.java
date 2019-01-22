@@ -21,7 +21,7 @@ public static int Lift2 = 5;
 public static int Lift3 = 6;
 
 //eater (intake) id, TalonSRX
-public static int Eater = 4;
+public static int Intake = 4;
 
 
 //sticc ids, Sticc1 is TalonSRX  and Sticc2 is VictorSPX
