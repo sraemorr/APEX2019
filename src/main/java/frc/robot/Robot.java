@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.DriveTrain;
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot {
   public static CargoIntake cargoIntake = new CargoIntake();
   public static Crossbow crossbow = new Crossbow();
   public static DriveTrain driveTrain = new DriveTrain();
+  public static Lift lift = new Lift();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -45,6 +47,7 @@ public class Robot extends TimedRobot {
     cargoIntake = new CargoIntake();
     crossbow = new Crossbow();
     driveTrain = new DriveTrain();
+    lift = new Lift();
 
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
