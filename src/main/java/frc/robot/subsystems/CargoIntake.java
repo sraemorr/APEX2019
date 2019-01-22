@@ -26,4 +26,8 @@ public class CargoIntake extends Subsystem {
     public void initDefaultCommand() {
   
     }
+
+    public void end(){
+        RobotMap.Intake.set(ControlMode.PercentOutput, 0.0);
+    }
 }

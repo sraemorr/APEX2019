@@ -24,5 +24,6 @@ public class SpitCargo extends Command {
     }
 
     protected void end() {
+        Robot.cargoIntake.end();
     }
 }

@@ -24,5 +24,6 @@ public class EatCargo extends Command {
     }
 
     protected void end() {
+        Robot.cargoIntake.end();
     }
 }
