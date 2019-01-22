@@ -1,6 +1,9 @@
 package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import edu.wpi.first.*;
 
 public class Crossbow extends Subsystem{
 
@@ -8,13 +11,13 @@ public class Crossbow extends Subsystem{
     public DoubleSolenoid Crossbow2 = RobotMap.Crossbow2;
    
     public void Forward(){
-        Crossbow1.set(false);
-        Crossbow2.set(false);
+        Crossbow1.set(Value.kForward);
+        Crossbow2.set(Value.kForward);
     }
 
     public void Reverse(){
-        Crossbow1.set(true);
-        Crossbow2.set(true);
+        Crossbow1.set(Value.kReverse);
+        Crossbow2.set(Value.kReverse);
     }
 
 

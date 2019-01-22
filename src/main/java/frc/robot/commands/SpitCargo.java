@@ -6,14 +6,14 @@ import frc.robot.subsystems.*;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.*;
 
-public class EatCargo extends Command {
+public class SpitCargo extends Command {
     
     
     protected void initialize() {
     }
 
     protected void execute() {
-     Robot.cargoIntake.Intake();
+     Robot.cargoIntake.Expel();
     }
 
     public boolean isFinished(){

@@ -1,13 +1,13 @@
-package main.java.frc.robot.commands; 
+package frc.robot.commands; 
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import main.java.frc.robot.subsystems.Crossbow;
+import frc.robot.subsystems.Crossbow;
 import frc.robot.RobotMap;
 
 public class ForwardCrossbow extends Crossbow{
     public ForwardCrossbow(){
-        requires(Robot.m_Crossbow);
+       
     }
 
     protected void initialize(){
@@ -15,7 +15,7 @@ public class ForwardCrossbow extends Crossbow{
     }
 
     protected void execute(){
-        Robot.kCrossbow.forwardCrossbow();
+        Robot.crossbow.Forward();
     }
 
     protected boolean isFinished(){
