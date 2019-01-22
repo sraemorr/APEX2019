@@ -10,8 +10,6 @@ import frc.robot.RobotMap;
 public class CargoIntake extends Subsystem {
     public TalonSRX Intake = RobotMap.Intake;
 
-
-
     public void Intake(){
         RobotMap.Intake.set(ControlMode.PercentOutput, -0.5);
     }
