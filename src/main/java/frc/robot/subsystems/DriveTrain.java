@@ -1,4 +1,4 @@
-package main.java.frc.robot.subsystems; 
+package frc.robot.subsystems; 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
@@ -48,10 +48,10 @@ public class DriveTrain extends Subsystem{
 
         //_sb.append("toutL:");
         _sb.append(motorOutputL);
-        _sb.append(_talonL.getSelectSensorVelocity(0));
+        _sb.append(_talonL.getSelectedSensorVelocity(0));
         
         _sb.append(motorOutputR);
-        _sb.append(_talonR.getSelectSensorVelocity(0));
+        _sb.append(_talonR.getSelectedSensorVelocity(0));
 
         _sb.setLength(0);
 

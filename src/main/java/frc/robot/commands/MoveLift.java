@@ -7,25 +7,29 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.*;
 import frc.robot.RobotMap;
 
-public class MoveLiftManual extends Command {
+public class MoveLift extends Command {
 double position;
-public MoveLiftManual( double position){
+double TargetPosition;
+public MoveLift(double TargetPosition){
     requires(Robot.lift);
-    this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
+    this.position= RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 
 protected void initialize(){
 
 }
-protected void execute(){
-    Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
+protected void execute(double TargetPosition){
+    Robot.lift.lift(ControlMode.MotionMagic, TargetPosition);
     
-
 }
 
 
 protected boolean isFinished() {
-     return false;
+    if (RobotMap.Lift1.getSelectedSensorPosition(0) <= TargetPosition + 10 && RobotMap.Lift1.getSelectedSensorPosition(0) >= TargetPosition + 10){
+
+    return true;
+    }
+    else return false;
 
 }
 protected void end() {
