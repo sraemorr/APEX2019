@@ -1,5 +1,9 @@
-package main.java.frc.robot.subsystems; 
+package frc.robot.subsystems; 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 public class DriveTrain extends Subsystem{
     public TalonSRX L1 = RobotMap.L1; 
@@ -29,7 +33,7 @@ public class DriveTrain extends Subsystem{
         this.R1.set(controlMode, right);
     }
     public boolean quickTurnController(){
-
+            
     }
 
     public void velocityPIDTest(){
