@@ -36,6 +36,21 @@ public class DriveTrain extends Subsystem{
 
         TalonSRX _talonL = this.L1;
         TalonSRX _talonR = this.R1;
+
+        double leftYstick = OI.xbox1.getY(Hand.kLeft); 
+        double rightYstick = OI.xbox1.getY(Hand.kRight);
+        double motorOutputL = _talon.getMotorOutputPercent();
+        double motorOutputR = _talon.getMotorOutputPercent();
+
+        //_sb.append("toutL:");
+        _sb.append(motorOutputL);
+        _sb.append(_talonL.getSelectSensorVelocity(0));
+        
+        _sb.append(motorOutputR);
+        _sb.append(_talonR.getSelectSensorVelocity(0));
+
+        _sb.setLength(0);
+
     }
     public void periodic(){
 

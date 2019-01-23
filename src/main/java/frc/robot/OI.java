@@ -39,4 +39,21 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
+
+    public static XboxController xbox1; 
+    public static XboxController xbox2; 
+
+    public OI(){
+      xbox1 = new XboxController(0);
+      xbox2 = new XboxController(1);
+
+    }
+
+    public XboxController xbox1(){
+      return xbox1; 
+    }
+
+    public XboxController xbox2(){
+      return xbox2; 
+    }
 }
