@@ -1,4 +1,4 @@
-package main.java.frc.robot.utils;
+package frc.robot.utils;
 import frc.robot.models.*; 
 
 public class DriveHelper {
@@ -67,7 +67,7 @@ public class DriveHelper {
                     negInertiaScalar = kLowNegInertiaCloseScalar;
                 }
             }
-            sensitivity = kLowSensitiity;
+            sensitivity = kLowSensitivity;
         }
         double negInertiaPower = negInertia * negInertiaScalar;
         mNegInertiaAccumlator += negInertiaPower;

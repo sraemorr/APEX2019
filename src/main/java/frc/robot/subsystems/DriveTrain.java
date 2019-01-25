@@ -2,7 +2,9 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.OI;
 import frc.robot.RobotMap;
 
 public class DriveTrain extends Subsystem{
@@ -43,8 +45,8 @@ public class DriveTrain extends Subsystem{
 
         double leftYstick = OI.xbox1.getY(Hand.kLeft); 
         double rightYstick = OI.xbox1.getY(Hand.kRight);
-        double motorOutputL = _talon.getMotorOutputPercent();
-        double motorOutputR = _talon.getMotorOutputPercent();
+        double motorOutputL = _talonL.getMotorOutputPercent();
+        double motorOutputR = _talonR.getMotorOutputPercent();
 
         //_sb.append("toutL:");
         _sb.append(motorOutputL);
