@@ -5,7 +5,7 @@ import frc.robot.Robot;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.RobotMap;
 
-public class ForwardCrossbow extends Crossbow{
+public class ForwardCrossbow extends Command{
     public ForwardCrossbow(){
        
     }

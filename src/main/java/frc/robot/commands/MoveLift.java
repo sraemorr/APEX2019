@@ -11,7 +11,7 @@ public class MoveLift extends Command {
 double position;
 double TargetPosition;
 public MoveLift(double TargetPosition){
-    requires(Robot.lift);
+    // requires(Robot.lift);
     this.position= RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 

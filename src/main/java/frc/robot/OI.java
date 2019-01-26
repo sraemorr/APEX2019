@@ -8,9 +8,9 @@
 package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 
-import org.graalvm.compiler.replacements.nodes.ReverseBytesNode;
-import org.usfirst.frc.team5803.robot.utils.POVTrigger;
-import org.usfirst.frc.team5803.robot.utils.TriggerButton;
+// import org.graalvm.compiler.replacements.nodes.ReverseBytesNode;
+import frc.robot.utils.POVTrigger;
+import frc.robot.utils.TriggerButton;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
@@ -37,11 +37,11 @@ public class OI {
       Button RPT2=new JoystickButton(xbox2, 1 );  
       RPT2.whileHeld(new MoveLiftManual());
       Button LPT2=new JoystickButton(xbox2, 2 );  
-      LPT2.whileHeld(new MoveLift());
+      LPT2.whileHeld(new MoveLift(0));
       
-      Button LPB2=new JoystickButton(xbox2, 3 );  //Change this to appropriate paddle value after testing
+      Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
       LPB2.whenActive(new MoveLiftManual());
-      LBB2.whenInactive();
+      // LPB2.whenInactive();
 
       Button LB2=new JoystickButton(xbox2,5);
         	LB2.whileHeld(new EatCargo());

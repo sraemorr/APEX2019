@@ -9,7 +9,7 @@ import frc.robot.RobotMap;
 
 public class MoveLiftManual extends Command {
 double position;
-public MoveLiftManual( double position){
+public MoveLiftManual(){
     requires(Robot.lift);
     this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
 }
@@ -18,8 +18,12 @@ protected void initialize(){
 
 }
 protected void execute(){
-    Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
     
+    if (OI.xbox2.getY(Hand.kLeft) >= 0.2  || OI.xbox2.getY(Hand.kLeft) <= -0.2) {
+        Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
+    }
+   
+    else end();
 
 }
 
