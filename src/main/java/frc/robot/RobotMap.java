@@ -17,11 +17,12 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import frc.robot.models.*;
 public class RobotMap {
 
 //drive train stuff
-  public static TalonSRX R1;
-  public static TalonSRX L1;
+  public static BobTalonSRX R1;
+  public static BobTalonSRX L1;
 
   public static VictorSPX R2;
   public static VictorSPX R3;
@@ -52,13 +53,13 @@ public static DoubleSolenoid Stair2;
 public static void init(){
      System.out.println("Initializing Speed Controllers");
 //left side drive base
-L1 = new TalonSRX(PortMap.L1);
+L1 = new BobTalonSRX(PortMap.L1);
 L2 = new VictorSPX(PortMap.L2);
 L2.follow(L1);
 L3 = new VictorSPX(PortMap.L3);
 L3.follow(L1);
 //right side drive base
-R1 = new TalonSRX(PortMap.R1);
+R1 = new BobTalonSRX(PortMap.R1);
 R2 = new VictorSPX(PortMap.R2);
 R2.follow(R1);
 R3 = new VictorSPX(PortMap.R3);
