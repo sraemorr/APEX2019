@@ -1,4 +1,4 @@
-package main.java.frc.robot.models;
+package frc.robot.models;
 
 public class DriveSignal {
     protected double mLeftMotor;
@@ -12,7 +12,7 @@ public class DriveSignal {
     public DriveSignal(double left, double right, boolean brakeMode){
         mLeftMotor = left; 
         mRightMotor = right;
-        mBrakeMotor = brakeMode; 
+        mBrakeMode = brakeMode; 
     }
 
     public static DriveSignal NEUTRAL = new DriveSignal(0, 0);
