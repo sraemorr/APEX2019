@@ -49,6 +49,8 @@ public class Robot extends TimedRobot {
     driveTrain = new DriveTrain();
     lift = new Lift();
 
+    Compressor compressor = new Compressor (0);
+
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
