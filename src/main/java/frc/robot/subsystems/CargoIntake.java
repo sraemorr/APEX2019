@@ -3,6 +3,8 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.*;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -19,6 +21,15 @@ public class CargoIntake extends Subsystem {
 
     }
 
+    public void ExtendRamp(){
+        RobotMap.Ramp1.set(Value.kForward);
+        RobotMap.Ramp2.set(Value.kForward);
+    }
+
+    public void RetractRamp(){
+        RobotMap.Ramp1.set(Value.kReverse);
+        RobotMap.Ramp2.set(Value.kReverse);
+    }
 
     @Override
     public void initDefaultCommand() {

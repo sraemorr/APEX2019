@@ -35,17 +35,14 @@ public class RobotMap {
   public static DoubleSolenoid LiftSolenoid;
 //intake/eater stuff
   public static TalonSRX Intake;
-//S.T.I.C.C.S. stuff
-  public static TalonSRX Sticc1;
-  public static VictorSPX Sticc2;
 
 // crossbow stuff
   public static DoubleSolenoid Crossbow1;
   public static DoubleSolenoid Crossbow2;
 
-//stair climber stuff
-public static DoubleSolenoid Stair1;
-public static DoubleSolenoid Stair2;
+//Ramp (climber) stuff
+public static DoubleSolenoid Ramp1;
+public static DoubleSolenoid Ramp2;
 
 
 
@@ -73,16 +70,12 @@ Lift3.follow(Lift1);
 LiftSolenoid = new DoubleSolenoid(PortMap.Lift_Solenoid_Forward_Channel, PortMap.Lift_Solenoid_Reverse_Channel);
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
-//sticcs stuff
-Sticc1 = new TalonSRX(PortMap.Sticc1);
-Sticc2 = new VictorSPX(PortMap.Sticc2);
-Sticc2.follow(Sticc1);
 //crossbow stuff
 Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
 Crossbow2 = new DoubleSolenoid(PortMap.Crossbow2_Forward_Channel, PortMap.Crossbow2_Reverse_Channel);
-//stair stepper stuff
-Stair1 = new DoubleSolenoid(PortMap.Stair1_Forward_Channel, PortMap.Stair1_Reverse_Channel);
-Stair2 = new DoubleSolenoid(PortMap.Stair2_Forward_Channel, PortMap.Stair2_Reverse_Channel);
+//ramp stuff
+Ramp1 = new DoubleSolenoid(PortMap.Ramp1_Forward_Channel, PortMap.Ramp1_Reverse_Channel);
+Ramp2 = new DoubleSolenoid(PortMap.Ramp2_Forward_Channel, PortMap.Ramp2_Reverse_Channel);
 
 
 }

@@ -27,13 +27,6 @@ public static int Lift_Solenoid_Reverse_Channel = 10;
 public static int Intake = 4;
 
 
-//sticc ids, Sticc1 is TalonSRX  and Sticc2 is VictorSPX
-//TalonSRX
-public static int Sticc1 = 5;
-
-//VictorSPX
-public static int Sticc2 = 7;
-
 //Crossbow PDP stuff, solenoid IDs (adjust later)
 public static int Crossbow1_Forward_Channel = 1;
 public static int Crossbow1_Reverse_Channel = 2;
@@ -42,12 +35,12 @@ public static int Crossbow2_Forward_Channel = 3;
 public static int Crossbow2_Reverse_Channel = 4;
 
 
-//Stair PDP stuff, solenoid IDs (adjust later)
-public static int Stair1_Forward_Channel = 5;
-public static int Stair1_Reverse_Channel = 6;
+//Ramp PDP stuff, solenoid IDs (adjust later)
+public static int Ramp1_Forward_Channel = 5;
+public static int Ramp1_Reverse_Channel = 6;
 
-public static int Stair2_Forward_Channel = 7;
-public static int Stair2_Reverse_Channel = 8;
+public static int Ramp2_Forward_Channel = 7;
+public static int Ramp2_Reverse_Channel = 8;
 
 
 }
