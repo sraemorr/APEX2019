@@ -30,8 +30,7 @@ public class RobotMap {
   public static VictorSPX L3;
 //lift stuff
   public static TalonSRX Lift1;
-  public static VictorSPX Lift2;
-  public static VictorSPX Lift3;
+  public static TalonSRX Lift2;
   public static DoubleSolenoid LiftSolenoid1;
   public static DoubleSolenoid LiftSolenoid2;
 //intake/eater stuff
@@ -64,10 +63,8 @@ R3 = new VictorSPX(PortMap.R3);
 R3.follow(R1);
 //lift stuff
 Lift1 = new TalonSRX(PortMap.Lift1);
-Lift2 = new VictorSPX(PortMap.Lift2);
+Lift2 = new TalonSRX(PortMap.Lift2);
 Lift2.follow(Lift1);
-Lift3 = new VictorSPX(PortMap.Lift3);
-Lift3.follow(Lift1);
 LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortMap.Lift_Solenoid1_Reverse_Channel);
 LiftSolenoid2 = new DoubleSolenoid(PortMap.Lift_Solenoid2_Forward_Channel, PortMap.Lift_Solenoid2_Reverse_Channel);
 //intake stuff

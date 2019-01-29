@@ -14,11 +14,11 @@ public static int R3 = 2;
 public static int L2 = 3;
 public static int L3 = 4;
 
-//lift ids, lift 1 is TalonSRX and others are VictorSPX
+//lift ids, all are talons
 public static int Lift1 = 3;
 
-public static int Lift2 = 5;
-public static int Lift3 = 6;
+public static int Lift2 = 4;
+
 
 public static int Lift_Solenoid1_Forward_Channel = 9;
 public static int Lift_Solenoid1_Reverse_Channel = 10;
@@ -26,7 +26,7 @@ public static int Lift_Solenoid2_Forward_Channel = 11;
 public static int Lift_Solenoid2_Reverse_Channel = 12;
 
 //eater (intake) id, TalonSRX
-public static int Intake = 4;
+public static int Intake = 5;
 
 
 //Crossbow PDP stuff, solenoid IDs (adjust later)
