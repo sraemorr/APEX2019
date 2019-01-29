@@ -20,10 +20,10 @@ public static int Lift1 = 3;
 public static int Lift2 = 5;
 public static int Lift3 = 6;
 
-public static int Lift_Solenoid_Forward_Channel_1 = 9;
-public static int Lift_Solenoid_Reverse_Channel_1 = 10;
-public static int Lift_Solenoid_1 = 11;
-public static int Lift_Solenoid_2 = 12;
+public static int Lift_Solenoid1_Forward_Channel = 9;
+public static int Lift_Solenoid1_Reverse_Channel = 10;
+public static int Lift_Solenoid2_Forward_Channel = 11;
+public static int Lift_Solenoid2_Reverse_Channel = 12;
 
 //eater (intake) id, TalonSRX
 public static int Intake = 4;
