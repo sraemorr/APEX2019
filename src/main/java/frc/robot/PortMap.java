@@ -26,7 +26,6 @@ public static int Lift_Solenoid_Reverse_Channel = 10;
 //eater (intake) id, TalonSRX
 public static int Intake = 4;
 
-
 //sticc ids, Sticc1 is TalonSRX  and Sticc2 is VictorSPX
 //TalonSRX
 public static int Sticc1 = 5;
