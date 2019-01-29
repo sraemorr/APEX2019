@@ -29,7 +29,7 @@ import edu.wpi.first.wpilibj.Compressor;
  */
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static OI oi;
+  public static OI oi = new OI();
   public static CargoIntake cargoIntake = new CargoIntake();
   public static Crossbow crossbow = new Crossbow();
   public static DriveTrain driveTrain = new DriveTrain();
