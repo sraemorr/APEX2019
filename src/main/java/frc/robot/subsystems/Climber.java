@@ -32,6 +32,10 @@ public class Climber extends Subsystem{
         Climber1.set(ControlMode.PercentOutput, -0.7);
     }
 
+    public void ClimberStop(){
+        Climber1.set(ControlMode.PercentOutput, 0.0);
+    }
+
     @Override
     public void initDefaultCommand(){
 

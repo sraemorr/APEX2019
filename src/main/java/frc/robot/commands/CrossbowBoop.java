@@ -5,8 +5,8 @@ import frc.robot.Robot;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.RobotMap;
 
-public class ForwardCrossbow extends Command{
-    public ForwardCrossbow(){
+public class CrossbowBoop extends Command{
+    public CrossbowBoop(){
        
     }
 
@@ -15,7 +15,7 @@ public class ForwardCrossbow extends Command{
     }
 
     protected void execute(){
-        Robot.crossbow.Forward();
+        Robot.crossbow.Boop();
     }
 
     protected boolean isFinished(){

@@ -17,10 +17,10 @@ import edu.wpi.first.wpilibj.buttons.Trigger;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.EatCargo;
-import frc.robot.commands.ForwardCrossbow;
+import frc.robot.commands.CrossbowBoop;
 import frc.robot.commands.MoveLift;
 import frc.robot.commands.MoveLiftManual;
-import frc.robot.commands.ReverseCrossbow;
+import frc.robot.commands.CrossbowAcquire;
 import frc.robot.commands.SpitCargo;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -52,11 +52,11 @@ public class OI {
           RB2.whileHeld(new SpitCargo());
 
       Button Y1=new JoystickButton(xbox1,4);
-        	Y1.whileActive(new ForwardCrossbow());
-        	Y1.whenInactive(new ReverseCrossbow());
+        	Y1.whileActive(new CrossbowBoop());
+        	Y1.whenInactive(new CrossbowAcquire());
       Button Y2=new JoystickButton(xbox2,4);
-         	Y2.whileActive(new ForwardCrossbow());
-           Y2.whenInactive(new ReverseCrossbow());
+         	Y2.whileActive(new CrossbowBoop());
+           Y2.whenInactive(new CrossbowAcquire());
     }
 
     public XboxController xbox1(){

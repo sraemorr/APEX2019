@@ -1,30 +1,29 @@
-package frc.robot.commands;
+package frc.robot.commands; 
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Crossbow;
+import frc.robot.subsystems.Climber;
 import frc.robot.RobotMap;
 
-public class ReverseCrossbow extends Command{
-
-    public ReverseCrossbow(){
-    
+public class CrawlForward extends Command{
+    public CrawlForward(){
+       
     }
 
     protected void initialize(){
-    
+       
     }
 
     protected void execute(){
-        Robot.crossbow.Reverse();
+        Robot.climber.ClimberForward();
     }
 
     protected boolean isFinished(){
-        return false;
+        return false; 
     }
 
     protected void end(){
-
+        Robot.climber.ClimberStop();
     }
 
     protected void interrupted(){

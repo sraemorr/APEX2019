@@ -5,8 +5,8 @@ import frc.robot.Robot;
 import frc.robot.subsystems.Climber;
 import frc.robot.RobotMap;
 
-public class ExtendRamp extends Command{
-    public ExtendRamp(){
+public class CrawlBack extends Command{
+    public CrawlBack(){
        
     }
 
@@ -15,7 +15,7 @@ public class ExtendRamp extends Command{
     }
 
     protected void execute(){
-        Robot.climber.ExtendClimber();
+        Robot.climber.ClimberReverse();;
     }
 
     protected boolean isFinished(){
@@ -23,7 +23,7 @@ public class ExtendRamp extends Command{
     }
 
     protected void end(){
-
+        Robot.climber.ClimberStop();
     }
 
     protected void interrupted(){
