@@ -1,25 +1,26 @@
-package frc.robot.commands; 
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Climber;
+import frc.robot.subsystems.Crossbow;
 import frc.robot.RobotMap;
 
-public class RetractRamp extends Command{
-    public RetractRamp(){
-       
+public class CrossbowAcquire extends Command{
+
+    public CrossbowAcquire(){
+    
     }
 
     protected void initialize(){
-       
+    
     }
 
     protected void execute(){
-        Robot.climber.RetractClimber();;
+        Robot.crossbow.Acquire();
     }
 
     protected boolean isFinished(){
-        return false; 
+        return false;
     }
 
     protected void end(){
