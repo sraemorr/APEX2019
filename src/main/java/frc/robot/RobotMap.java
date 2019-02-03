@@ -41,8 +41,10 @@ public class RobotMap {
   public static DoubleSolenoid Crossbow2;
 
 //Ramp (climber) stuff
-public static DoubleSolenoid Ramp1;
-public static DoubleSolenoid Ramp2;
+public static DoubleSolenoid ClimberRamp1;
+public static DoubleSolenoid ClimberRamp2;
+public static TalonSRX Climber1;
+public static TalonSRX Climber2;
 
 
 
@@ -72,11 +74,13 @@ Intake = new TalonSRX(PortMap.Intake);
 //crossbow stuff
 Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
 Crossbow2 = new DoubleSolenoid(PortMap.Crossbow2_Forward_Channel, PortMap.Crossbow2_Reverse_Channel);
-//ramp stuff
-Ramp1 = new DoubleSolenoid(PortMap.Ramp1_Forward_Channel, PortMap.Ramp1_Reverse_Channel);
-Ramp2 = new DoubleSolenoid(PortMap.Ramp2_Forward_Channel, PortMap.Ramp2_Reverse_Channel);
+//climber stuff
+ClimberRamp1 = new DoubleSolenoid(PortMap.ClimberSolenoid1_Forward_Channel, PortMap.ClimberSolenoid1_Reverse_Channel);
+ClimberRamp2 = new DoubleSolenoid(PortMap.ClimberSolenoid2_Forward_Channel, PortMap.ClimberSolenoid2_Reverse_Channel);
 
-
+Climber1 = new TalonSRX(PortMap.Climber1);
+Climber2 = new TalonSRX(PortMap.Climber2);
+Climber2.follow(Climber1);
 }
 
 

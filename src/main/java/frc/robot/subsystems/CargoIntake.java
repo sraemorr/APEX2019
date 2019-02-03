@@ -14,23 +14,16 @@ public class CargoIntake extends Subsystem {
 
     public void Intake(){
         RobotMap.Intake.set(ControlMode.PercentOutput, -0.5);
+        RobotMap.Climber1.set(ControlMode.PercentOutput, -0.5);
     }
 
     public void Expel(){
         RobotMap.Intake.set(ControlMode.PercentOutput, 0.5 );
+        RobotMap.Climber1.set(ControlMode.PercentOutput, 0.5);
 
     }
 
-    public void ExtendRamp(){
-        RobotMap.Ramp1.set(Value.kForward);
-        RobotMap.Ramp2.set(Value.kForward);
-    }
-
-    public void RetractRamp(){
-        RobotMap.Ramp1.set(Value.kReverse);
-        RobotMap.Ramp2.set(Value.kReverse);
-    }
-
+ 
     @Override
     public void initDefaultCommand() {
   

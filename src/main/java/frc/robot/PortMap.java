@@ -37,12 +37,16 @@ public static int Crossbow2_Forward_Channel = 3;
 public static int Crossbow2_Reverse_Channel = 4;
 
 
-//Ramp PDP stuff, solenoid IDs (adjust later)
-public static int Ramp1_Forward_Channel = 5;
-public static int Ramp1_Reverse_Channel = 6;
+//Climber PDP stuff, solenoid IDs (adjust later)
+public static int ClimberSolenoid1_Forward_Channel = 5;
+public static int ClimberSolenoid1_Reverse_Channel = 6;
 
-public static int Ramp2_Forward_Channel = 7;
-public static int Ramp2_Reverse_Channel = 8;
+public static int ClimberSolenoid2_Forward_Channel = 7;
+public static int ClimberSolenoid2_Reverse_Channel = 8;
+
+//climber speed controller ids, both are talonsrx
+public static int Climber1 = 6;
+public static int Climber2 = 7;
 
 
 }

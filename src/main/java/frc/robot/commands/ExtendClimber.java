@@ -1,17 +1,18 @@
-package frc.robot.commands; 
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Climber;
+import frc.robot.subsystems.Crossbow;
 import frc.robot.RobotMap;
 
-public class ExtendRamp extends Command{
-    public ExtendRamp(){
-       
+public class ExtendClimber extends Command{
+
+    public ExtendClimber(){
+    
     }
 
     protected void initialize(){
-       
+    
     }
 
     protected void execute(){
@@ -19,7 +20,7 @@ public class ExtendRamp extends Command{
     }
 
     protected boolean isFinished(){
-        return false; 
+        return false;
     }
 
     protected void end(){

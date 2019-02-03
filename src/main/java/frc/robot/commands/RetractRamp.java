@@ -2,7 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.subsystems.Crossbow;
+import frc.robot.subsystems.Climber;
 import frc.robot.RobotMap;
 
 public class RetractRamp extends Command{
@@ -15,7 +15,7 @@ public class RetractRamp extends Command{
     }
 
     protected void execute(){
-        Robot.cargoIntake.RetractRamp();;
+        Robot.climber.RetractClimber();;
     }
 
     protected boolean isFinished(){

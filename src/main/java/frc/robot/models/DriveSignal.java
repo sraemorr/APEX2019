@@ -1,4 +1,4 @@
-package main.java.frc.robot.models;
+package frc.robot.models;
 
 public class DriveSignal {
     protected double mLeftMotor;
