@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Lift;
+import frc.robot.models.SRXGains;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.Climber;
@@ -43,6 +44,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    RobotMap.init();
+
     oi = new OI();
     cargoIntake = new CargoIntake();
     crossbow = new Crossbow();
@@ -57,6 +60,17 @@ public class Robot extends TimedRobot {
     // SmartDashboard.putData("Auto mode", m_chooser);
 
     compressor.setClosedLoopControl(true);
+
+    SRXGains highGearGains = new SRXGains(DriveTrain.HIGH_GEAR_PROFILE, 1.4, 0.0, 8.0, 0.25, 0);
+    SRXGains rotationGains = new SRXGains(DriveTrain.ROTATION_PROFILE, 1.6, 0.0, 50, 0.0, 0);
+
+    driveTrain.configGains(highGearGains);
+    driveTrain.configGains(rotationGains);
+    driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
+    driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
+
+    Robot.driveTrain.pigeon.setYaw(0,0);
+    
   }
 
   /**
@@ -145,5 +159,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    Scheduler.getInstance().run();
   }
 }
