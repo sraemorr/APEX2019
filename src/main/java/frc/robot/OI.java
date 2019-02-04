@@ -16,12 +16,12 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.EatCargo;
-import frc.robot.commands.CrossbowBoop;
-import frc.robot.commands.MoveLift;
-import frc.robot.commands.MoveLiftManual;
-import frc.robot.commands.CrossbowAcquire;
-import frc.robot.commands.SpitCargo;
+// import frc.robot.commands.EatCargo;
+// import frc.robot.commands.CrossbowBoop;
+// import frc.robot.commands.MoveLift;
+// import frc.robot.commands.MoveLiftManual;
+// import frc.robot.commands.CrossbowAcquire;
+// import frc.robot.commands.SpitCargo;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -35,28 +35,28 @@ public class OI {
       xbox2 = new XboxController(1);
 
       Button RPT2=new JoystickButton(xbox2, 1 );  
-      RPT2.whileHeld(new MoveLiftManual());
+      // RPT2.whileHeld(new MoveLiftManual());
       Button LPT2=new JoystickButton(xbox2, 2 );  
-      LPT2.whileHeld(new MoveLift(0));
+      // LPT2.whileHeld(new MoveLift(0));
       
       Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
-      LPB2.whenActive(new MoveLiftManual());
+      // LPB2.whenActive(new MoveLiftManual());
       // LPB2.whenInactive();
 
       Button LB2=new JoystickButton(xbox2,5);
-        	LB2.whileHeld(new EatCargo());
+        	// LB2.whileHeld(new EatCargo());
 
       Button RB1=new JoystickButton(xbox2,6);
-          RB1.whileHeld(new SpitCargo());
+          // RB1.whileHeld(new SpitCargo());
       Button RB2=new JoystickButton(xbox2,6);
-          RB2.whileHeld(new SpitCargo());
+          // RB2.whileHeld(new SpitCargo());
 
       Button Y1=new JoystickButton(xbox1,4);
-        	Y1.whileActive(new CrossbowBoop());
-        	Y1.whenInactive(new CrossbowAcquire());
+        	// Y1.whileActive(new CrossbowBoop());
+        	// Y1.whenInactive(new CrossbowAcquire());
       Button Y2=new JoystickButton(xbox2,4);
-         	Y2.whileActive(new CrossbowBoop());
-           Y2.whenInactive(new CrossbowAcquire());
+         	// Y2.whileActive(new CrossbowBoop());
+          //  Y2.whenInactive(new CrossbowAcquire());
     }
 
     public XboxController xbox1(){

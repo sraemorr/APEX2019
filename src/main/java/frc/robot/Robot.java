@@ -28,12 +28,12 @@ import edu.wpi.first.wpilibj.Compressor;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static OI oi = new OI();
-  public static CargoIntake cargoIntake = new CargoIntake();
-  public static Crossbow crossbow = new Crossbow();
-  public static DriveTrain driveTrain = new DriveTrain();
-  public static Lift lift = new Lift();
-  public static Climber climber = new Climber();
+  public static OI oi;
+  // public static CargoIntake cargoIntake = new CargoIntake();
+  // public static Crossbow crossbow = new Crossbow();
+  public static DriveTrain driveTrain;
+  // public static Lift lift = new Lift();
+  // public static Climber climber = new Climber();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -47,11 +47,11 @@ public class Robot extends TimedRobot {
     RobotMap.init();
 
     oi = new OI();
-    cargoIntake = new CargoIntake();
-    crossbow = new Crossbow();
+    // cargoIntake = new CargoIntake();
+    // crossbow = new Crossbow();
     driveTrain = new DriveTrain();
-    lift = new Lift();
-    climber = new Climber();
+    // lift = new Lift();
+    // climber = new Climber();
 
     Compressor compressor = new Compressor (0);
 
@@ -68,9 +68,8 @@ public class Robot extends TimedRobot {
     driveTrain.configGains(rotationGains);
     driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
     driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
+    driveTrain.pigeon.setYaw(0,0);
 
-    Robot.driveTrain.pigeon.setYaw(0,0);
-    
   }
 
   /**
