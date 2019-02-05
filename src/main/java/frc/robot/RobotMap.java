@@ -14,6 +14,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+import frc.robot.utils.ControllerConfig;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -52,17 +53,19 @@ public static TalonSRX Climber2;
 public static void init(){
      System.out.println("Initializing Speed Controllers");
 //left side drive base
-L1 = new BobTalonSRX(PortMap.L1);
-L2 = new VictorSPX(PortMap.L2);
-L2.follow(L1);
-L3 = new VictorSPX(PortMap.L3);
-L3.follow(L1);
-//right side drive base
-R1 = new BobTalonSRX(PortMap.R1);
-R2 = new VictorSPX(PortMap.R2);
-R2.follow(R1);
-R3 = new VictorSPX(PortMap.R3);
-R3.follow(R1);
+    //left side drive base
+    L1 = new BobTalonSRX(PortMap.L1, false); //Create lead drive talon with inversion settings
+    L2 = new VictorSPX(PortMap.L2);
+    ControllerConfig.setDriveFollower(L2, L1, L1.getInverted());
+    L3 = new VictorSPX(PortMap.L3);
+    ControllerConfig.setDriveFollower(L3, L1, L1.getInverted());
+
+    //right side drive base
+    R1 = new BobTalonSRX(PortMap.R1, true); //Create lead drive talon with inversion settings
+    R2 = new VictorSPX(PortMap.R2);
+    ControllerConfig.setDriveFollower(R2, R1, R1.getInverted());
+    R3 = new VictorSPX(PortMap.R3);
+    ControllerConfig.setDriveFollower(R3, R1, R1.getInverted());
 //lift stuff
 Lift1 = new TalonSRX(PortMap.Lift1);
 Lift2 = new TalonSRX(PortMap.Lift2);
