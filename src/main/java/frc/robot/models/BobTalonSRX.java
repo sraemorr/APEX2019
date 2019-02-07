@@ -1,5 +1,4 @@
 package frc.robot.models;
-//package org.usfirst.frc.team319.models;
 
 import com.ctre.phoenix.ErrorCode;
 import com.ctre.phoenix.ParamEnum;
@@ -8,6 +7,9 @@ import com.ctre.phoenix.motorcontrol.RemoteSensorSource;
 import com.ctre.phoenix.motorcontrol.SensorTerm;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.TalonSRXConfiguration;
+
+import frc.robot.utils.ControllerConfig;
 
 public class BobTalonSRX extends TalonSRX {
 
@@ -20,13 +22,9 @@ public class BobTalonSRX extends TalonSRX {
 	private FeedbackDevice primaryFeedbackDevice;
 	private FeedbackDevice secondaryFeedbackDevice;
 
-	public BobTalonSRX(int deviceNumber) {
+	public BobTalonSRX(int deviceNumber, Boolean isInverted) {
 		super(deviceNumber);
-		this.configNominalOutputForward(0.0);
-		this.configNominalOutputReverse(0.0);
-		this.configPeakOutputForward(1);
-		this.configPeakOutputReverse(-1);
-		this.configMotionProfileTrajectoryPeriod(0);
+		ControllerConfig.setDriveLeader(this, isInverted);
 	}
 
 	public int getPrimaryPidIndex() {

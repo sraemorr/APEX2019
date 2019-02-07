@@ -43,6 +43,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+      RobotMap.init();
     oi = new OI();
     cargoIntake = new CargoIntake();
     crossbow = new Crossbow();
