@@ -22,6 +22,7 @@ import frc.robot.commands.MoveLift;
 import frc.robot.commands.MoveLiftManual;
 import frc.robot.commands.CrossbowAcquire;
 import frc.robot.commands.SpitCargo;
+import frc.robot.commands.ClimberPrep;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -34,31 +35,45 @@ public class OI {
       xbox1 = new XboxController(0);
       xbox2 = new XboxController(1);
 
-      Button RPT2=new JoystickButton(xbox2, 1 );  
-      RPT2.whileHeld(new MoveLiftManual());
-      Button LPT2=new JoystickButton(xbox2, 2 );  
-      LPT2.whileHeld(new MoveLift(0));
-      
-      Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
-      LPB2.whenActive(new MoveLiftManual());
+      // Button RPT2=new JoystickButton(xbox2, 1);  // 1 is equal to A
+        //  RPT2.whileHeld(new MoveLiftManual());
+      Button LPT2=new JoystickButton(xbox2, 2 );  // 2 is equal to B
+       LPT2.whileHeld(new MoveLiftManual());
+      Button RPB2=new JoystickButton(xbox2, 3); //3 = X
+          RPB2.whenPressed(new ClimberPrep());
+      // Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
+          // LPB2.whenActive(new MoveLiftManual()); // 3 is equal to X
       // LPB2.whenInactive();
-
+//4 is equal to Y
       Button LB2=new JoystickButton(xbox2,5);
         	LB2.whileHeld(new EatCargo());
 
-      Button RB1=new JoystickButton(xbox2,6);
-          RB1.whileHeld(new SpitCargo());
+      // Button RB1=new JoystickButton(xbox2,6);
+          // RB1.whileHeld(new SpitCargo());
       Button RB2=new JoystickButton(xbox2,6);
-          RB2.whileHeld(new SpitCargo());
+        RB2.whileHeld(new SpitCargo());
 
-      Button Y1=new JoystickButton(xbox1,4);
-        	Y1.whileActive(new CrossbowBoop());
-        	Y1.whenInactive(new CrossbowAcquire());
-      Button Y2=new JoystickButton(xbox2,4);
-         	Y2.whileActive(new CrossbowBoop());
-           Y2.whenInactive(new CrossbowAcquire());
+      // Button Y1=new JoystickButton(xbox1,4);
+        	// Y1.whileActive(new CrossbowBoop());
+        	// Y1.whenInactive(new CrossbowAcquire());
+      TriggerButton RT2=new TriggerButton(xbox2, 3);
+        RT2.whileActive(new CrossbowBoop());
+        RT2.whenInactive(new CrossbowAcquire());
       
-      TriggerButton RT1 = new TriggerButton(xbox1, 3);
+      
+      
+    POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
+		DPAD_UP2.whenPressed(new MoveLift(80));
+
+		POVTrigger DPAD_RIGHT2 = new POVTrigger(xbox2, 0, 90);
+		DPAD_RIGHT2.whenPressed(new MoveLift(90));
+
+		POVTrigger DPAD_LEFT2 = new POVTrigger(xbox2, 0, 270);
+		DPAD_LEFT2.whileHeld(new MoveLift(30));
+		DPAD_LEFT2.whenReleased(new MoveLift(40));
+
+		POVTrigger DPAD_DOWN2 = new POVTrigger(xbox2, 0, 180);
+		DPAD_DOWN2.whenPressed(new MoveLift(3)); 
       
     }
 
