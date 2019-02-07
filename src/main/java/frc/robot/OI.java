@@ -57,6 +57,9 @@ public class OI {
       Button Y2=new JoystickButton(xbox2,4);
          	Y2.whileActive(new CrossbowBoop());
            Y2.whenInactive(new CrossbowAcquire());
+      
+      TriggerButton RT1 = new TriggerButton(xbox1, 3);
+      
     }
 
     public XboxController xbox1(){

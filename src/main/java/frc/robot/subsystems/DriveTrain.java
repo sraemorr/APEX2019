@@ -1,4 +1,4 @@
-package main.java.frc.robot.subsystems;
+package frc.robot.subsystems;
 
 import frc.robot.OI;
 import frc.robot.Robot;
