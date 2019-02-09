@@ -36,7 +36,7 @@ public class ControllerConfig{
             currentSRX.follow(RobotMap.Lift1);
         }
         currentSRX.setInverted(isInverted);
-        currentSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
+        currentSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 0);
         currentSRX.setSensorPhase(true);
         currentSRX.configNominalOutputForward(0.0);
 		currentSRX.configNominalOutputReverse(0.0);

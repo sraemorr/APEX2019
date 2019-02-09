@@ -72,6 +72,8 @@ Lift2 = new TalonSRX(PortMap.Lift2);
 Lift2.follow(Lift1);
 LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortMap.Lift_Solenoid1_Reverse_Channel);
 LiftSolenoid2 = new DoubleSolenoid(PortMap.Lift_Solenoid2_Forward_Channel, PortMap.Lift_Solenoid2_Reverse_Channel);
+ControllerConfig.setLift(Lift1, false);
+ControllerConfig.setLift(Lift2, false);
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
 //crossbow stuff
@@ -84,6 +86,8 @@ ClimberRamp2 = new DoubleSolenoid(PortMap.ClimberSolenoid2_Forward_Channel, Port
 Climber1 = new TalonSRX(PortMap.Climber1);
 Climber2 = new TalonSRX(PortMap.Climber2);
 Climber2.follow(Climber1);
+ControllerConfig.setClimber(Climber1, false);
+ControllerConfig.setClimber(Climber2, false);
 }
 
 
