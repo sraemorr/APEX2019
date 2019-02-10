@@ -21,6 +21,11 @@ public class ControllerConfig {
         leaderSRX.configPeakCurrentLimit(25);
         leaderSRX.configPeakCurrentDuration(0, 0);
         leaderSRX.enableCurrentLimit(true);
+
+        leaderSRX.config_kP(0, 1, 0);
+		leaderSRX.config_kI(0, 0, 0);
+		leaderSRX.config_kD(0, 0, 0);
+		leaderSRX.config_kF(0, 0, 0);
     }
 
     public static void setDriveFollower(VictorSPX currentSPX, TalonSRX leaderSRX, Boolean isInverted) {
@@ -38,6 +43,10 @@ public class ControllerConfig {
 
         if (currentSRX == RobotMap.Lift1) {
             currentSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
+            currentSRX.config_kP(0, 1, 0);
+            currentSRX.config_kI(0, 0, 0);
+            currentSRX.config_kD(0, 0, 0);
+            currentSRX.config_kF(0, 0, 0);
         }
         if (currentSRX == RobotMap.Lift2) {
             currentSRX.follow(RobotMap.Lift1);
@@ -59,6 +68,7 @@ public class ControllerConfig {
         currentSRX.enableCurrentLimit(true);
         // currentSRX.configMotionAcceleration(500, 0); //TODO SET THESE
         // currentSRX.configMotionCruiseVelocity(1000, 0); //TODO SET THESE
+
     }
 
     public static void setClimber(TalonSRX currentSRX, Boolean isInverted) {
