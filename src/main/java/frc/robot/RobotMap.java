@@ -72,8 +72,8 @@ Lift2 = new TalonSRX(PortMap.Lift2);
 Lift2.follow(Lift1);
 LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortMap.Lift_Solenoid1_Reverse_Channel);
 LiftSolenoid2 = new DoubleSolenoid(PortMap.Lift_Solenoid2_Forward_Channel, PortMap.Lift_Solenoid2_Reverse_Channel);
-ControllerConfig.setLift(Lift1, false);
-ControllerConfig.setLift(Lift2, false);
+ControllerConfig.setLift(Lift1);
+ControllerConfig.setLift(Lift2);
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
 //crossbow stuff
