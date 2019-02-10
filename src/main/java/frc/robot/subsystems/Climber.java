@@ -3,15 +3,14 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import edu.wpi.first.*;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 public class Climber extends Subsystem{
 
-    public DoubleSolenoid ClimberRamp1 = RobotMap.ClimberRamp1;
-    public DoubleSolenoid ClimberRamp2 = RobotMap.ClimberRamp2;
+    public DoubleSolenoid ClimberRamp1 = RobotMap.ClimberPneu1;
+    public DoubleSolenoid ClimberRamp2 = RobotMap.ClimberPneu2;
     public TalonSRX Climber1 = RobotMap.Climber1;
    
     public void ExtendClimber(){

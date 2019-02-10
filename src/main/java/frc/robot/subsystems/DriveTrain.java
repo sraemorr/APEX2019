@@ -38,29 +38,14 @@ public class DriveTrain extends Subsystem {
    
    
    public void initDefaultCommand() {
-       // et the default command for a subsystem here.
-//   	System.out.println("about to set default command to drive something");
 	   setDefaultCommand(new Drive());
-//   	System.out.println("drive something" + new Drive());
-   	//setDefaultCommand(new DrivetrainVelocityPIDTest());
    }
 
    public void configGains (SRXGains gains) {
 	   this.L1.setGains(gains);
 	   this.R1.setGains(gains);
    }
- /*  //use config gains instead
-    public void configPIDF(double p, double i, double d, double f) {
-    	this.L1.config_kP(0, p, 0);
-    	this.L1.config_kI(0, i, 0);
-    	this.L1.config_kD(0, d, 0);
-    	this.L1.config_kF(0, f, 0);
-    	this.R1.config_kP(0, p, 0);
-    	this.R1.config_kI(0, i, 0);
-    	this.R1.config_kD(0, d, 0);
-    	this.R1.config_kF(0, f, 0);
-    }
-   */ 
+
     public void drive(ControlMode controlMode, double left, double right){
     	this.L1.set(controlMode, left);
     	this.R1.set(controlMode, right);

@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Lift;
+import frc.robot.models.SRXGains;
+import frc.robot.RobotMap;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.Climber;
@@ -29,13 +31,12 @@ import frc.robot.Booleans;
  */
 public class Robot extends TimedRobot {
   public static OI oi = new OI();
-  public static CargoIntake cargoIntake = new CargoIntake();
-  public static Crossbow crossbow = new Crossbow();
-  public static DriveTrain driveTrain = new DriveTrain();
-  public static Lift lift = new Lift();
-  public static Climber climber = new Climber();
-  public static Booleans booleans = new Booleans();
-
+  public static CargoIntake cargoIntake
+  public static Crossbow crossbow
+  public static DriveTrain driveTrain
+  public static Lift lift
+  public static Climber climber
+  public static Booleans booleans
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -45,10 +46,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-      RobotMap.init();
+    RobotMap.init();
+
     oi = new OI();
-    cargoIntake = new CargoIntake();
-    crossbow = new Crossbow();
+    // cargoIntake = new CargoIntake();
+    // crossbow = new Crossbow();
     driveTrain = new DriveTrain();
     lift = new Lift();
     climber = new Climber();
@@ -62,6 +64,16 @@ public class Robot extends TimedRobot {
     // SmartDashboard.putData("Auto mode", m_chooser);
 
     compressor.setClosedLoopControl(true);
+
+    SRXGains highGearGains = new SRXGains(DriveTrain.HIGH_GEAR_PROFILE, 1.4, 0.0, 8.0, 0.25, 0);
+    SRXGains rotationGains = new SRXGains(DriveTrain.ROTATION_PROFILE, 1.6, 0.0, 50, 0.0, 0);
+
+    driveTrain.configGains(highGearGains);
+    driveTrain.configGains(rotationGains);
+    driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
+    driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
+    driveTrain.pigeon.setYaw(0,0);
+
   }
 
   /**
@@ -156,5 +168,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+    Scheduler.getInstance().run();
   }
 }

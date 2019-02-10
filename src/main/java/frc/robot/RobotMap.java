@@ -6,7 +6,6 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-import com.ctre.phoenix.*;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -19,6 +18,9 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.models.*;
+import frc.robot.utils.ControllerConfig;
+
+
 public class RobotMap {
 
 //drive train stuff
@@ -41,18 +43,15 @@ public class RobotMap {
   public static DoubleSolenoid Crossbow1;
   public static DoubleSolenoid Crossbow2;
 
-//Ramp (climber) stuff
-public static DoubleSolenoid ClimberRamp1;
-public static DoubleSolenoid ClimberRamp2;
-public static TalonSRX Climber1;
-public static TalonSRX Climber2;
+  //Ramp (climber) stuff
+  public static DoubleSolenoid ClimberPneu1;
+  public static DoubleSolenoid ClimberPneu2;
+  public static TalonSRX Climber1;
+  public static TalonSRX Climber2;
 
+  public static void init(){
+    System.out.println("Initializing Speed Controllers");
 
-
-
-public static void init(){
-     System.out.println("Initializing Speed Controllers");
-//left side drive base
     //left side drive base
     L1 = new BobTalonSRX(PortMap.L1, false); //Create lead drive talon with inversion settings
     L2 = new VictorSPX(PortMap.L2);
@@ -80,8 +79,8 @@ Intake = new TalonSRX(PortMap.Intake);
 Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
 Crossbow2 = new DoubleSolenoid(PortMap.Crossbow2_Forward_Channel, PortMap.Crossbow2_Reverse_Channel);
 //climber stuff
-ClimberRamp1 = new DoubleSolenoid(PortMap.ClimberSolenoid1_Forward_Channel, PortMap.ClimberSolenoid1_Reverse_Channel);
-ClimberRamp2 = new DoubleSolenoid(PortMap.ClimberSolenoid2_Forward_Channel, PortMap.ClimberSolenoid2_Reverse_Channel);
+ClimberPneu1 = new DoubleSolenoid(PortMap.ClimberSolenoid1_Forward_Channel, PortMap.ClimberSolenoid1_Reverse_Channel);
+ClimberPneu2 = new DoubleSolenoid(PortMap.ClimberSolenoid2_Forward_Channel, PortMap.ClimberSolenoid2_Reverse_Channel);
 
 Climber1 = new TalonSRX(PortMap.Climber1);
 Climber2 = new TalonSRX(PortMap.Climber2);

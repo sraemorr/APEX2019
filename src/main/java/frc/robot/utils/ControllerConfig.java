@@ -1,13 +1,11 @@
 package frc.robot.utils;
-
 import com.ctre.phoenix.motorcontrol.*;
 import com.ctre.phoenix.motorcontrol.can.*;
 import frc.robot.RobotMap;
 
-public class ControllerConfig {
-    // configs victor to all default settings, then prepares all proper settings for
-    // driving
-    public static void setDriveLeader(TalonSRX leaderSRX, Boolean isInverted) {
+public class ControllerConfig{
+    // configs victor to all default settings, then prepares all proper settings for driving
+    public static void setDriveLeader(TalonSRX leaderSRX, Boolean isInverted){
         leaderSRX.configFactoryDefault();
         leaderSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
         leaderSRX.setInverted(isInverted);
@@ -68,18 +66,17 @@ public class ControllerConfig {
         currentSRX.enableCurrentLimit(true);
         // currentSRX.configMotionAcceleration(500, 0); //TODO SET THESE
         // currentSRX.configMotionCruiseVelocity(1000, 0); //TODO SET THESE
-
     }
 
-    public static void setClimber(TalonSRX currentSRX, Boolean isInverted) {
+    public static void setClimber(TalonSRX currentSRX, Boolean isInverted){
         currentSRX.configFactoryDefault();
         currentSRX.setInverted(isInverted);
-        if (currentSRX == RobotMap.Climber2) {
+        if(currentSRX == RobotMap.Climber2){
             currentSRX.follow(RobotMap.Climber1);
         }
         currentSRX.configNominalOutputForward(0.0);
-        currentSRX.configNominalOutputReverse(0.0);
-        currentSRX.configPeakOutputForward(1);
+		currentSRX.configNominalOutputReverse(0.0);
+		currentSRX.configPeakOutputForward(1);
         currentSRX.configPeakOutputReverse(-1);
         // currentSRX.configContinuousCurrentLimit(40);
         // currentSRX.configPeakCurrentLimit(40);
