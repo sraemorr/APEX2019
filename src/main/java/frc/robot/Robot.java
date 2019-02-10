@@ -131,6 +131,9 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+    RobotMap.Lift1.setSelectedSensorPosition(0);
+    RobotMap.R1.setSelectedSensorPosition(0);
+    RobotMap.L1.setSelectedSensorPosition(0);
   }
 
   /**
