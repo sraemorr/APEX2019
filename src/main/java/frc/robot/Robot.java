@@ -50,6 +50,7 @@ public class Robot extends TimedRobot {
     driveTrain = new DriveTrain();
     lift = new Lift();
     climber = new Climber();
+    Robot.driveTrain.pigeon.setYaw(0, 0);
 
     Compressor compressor = new Compressor (0);
 
@@ -100,6 +101,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_chooser.getSelected();
+    Robot.driveTrain.pigeon.setYaw(0, 0);
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -134,6 +136,8 @@ public class Robot extends TimedRobot {
     RobotMap.Lift1.setSelectedSensorPosition(0);
     RobotMap.R1.setSelectedSensorPosition(0);
     RobotMap.L1.setSelectedSensorPosition(0);
+
+    Robot.driveTrain.pigeon.setYaw(0, 0);
   }
 
   /**
