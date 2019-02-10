@@ -18,6 +18,7 @@ import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.Compressor; 
+import frc.robot.Booleans;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain();
   public static Lift lift = new Lift();
   public static Climber climber = new Climber();
+  public static Booleans booleans = new Booleans();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -51,6 +53,7 @@ public class Robot extends TimedRobot {
     lift = new Lift();
     climber = new Climber();
     Robot.driveTrain.pigeon.setYaw(0, 0);
+    booleans.IsEndGame = false;
 
     Compressor compressor = new Compressor (0);
 
