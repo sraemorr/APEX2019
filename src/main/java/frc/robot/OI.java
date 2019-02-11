@@ -39,9 +39,9 @@ public class OI {
       // Button RPT2=new JoystickButton(xbox2, 1);  // 1 is equal to A
         //  RPT2.whileHeld(new MoveLiftManual());
       Button LPT2=new JoystickButton(xbox2, 2 );  // 2 is equal to B
-       LPT2.whileHeld(new MoveLiftManual());
+      //  LPT2.whileHeld(new MoveLiftManual());
       Button RPB2=new JoystickButton(xbox2, 3); //3 = X
-          RPB2.whenPressed(new ClimberPrep());
+          // RPB2.whenPressed(new ClimberPrep());
       // Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
           // LPB2.whenActive(new MoveLiftManual()); // 3 is equal to X
       // LPB2.whenInactive();
@@ -68,17 +68,17 @@ public class OI {
       
       
     POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
-		DPAD_UP2.whenPressed(new MoveLift(80));
+		// DPAD_UP2.whenPressed(new MoveLift(80));
 
 		POVTrigger DPAD_RIGHT2 = new POVTrigger(xbox2, 0, 90);
-		DPAD_RIGHT2.whenPressed(new MoveLift(90));
+		// DPAD_RIGHT2.whenPressed(new MoveLift(90));
 
 		POVTrigger DPAD_LEFT2 = new POVTrigger(xbox2, 0, 270);
-		DPAD_LEFT2.whileHeld(new MoveLift(30));
-		DPAD_LEFT2.whenReleased(new MoveLift(40));
+		// DPAD_LEFT2.whileHeld(new MoveLift(30));
+		// DPAD_LEFT2.whenReleased(new MoveLift(40));
 
 		POVTrigger DPAD_DOWN2 = new POVTrigger(xbox2, 0, 180);
-		DPAD_DOWN2.whenPressed(new MoveLift(3)); 
+		// DPAD_DOWN2.whenPressed(new MoveLift(3)); 
       
     }
 

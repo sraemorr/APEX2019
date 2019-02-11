@@ -9,18 +9,15 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 public class Climber extends Subsystem{
 
-    public DoubleSolenoid ClimberRamp1 = RobotMap.ClimberPneu1;
-    public DoubleSolenoid ClimberRamp2 = RobotMap.ClimberPneu2;
+    public DoubleSolenoid ClimberPneu = RobotMap.ClimberPneu1;
     public TalonSRX Climber1 = RobotMap.Climber1;
    
     public void ExtendClimber(){
-        ClimberRamp1.set(Value.kForward);
-        ClimberRamp2.set(Value.kForward);
+        ClimberPneu.set(Value.kForward);
     }
 
     public void RetractClimber(){
-        ClimberRamp1.set(Value.kReverse);
-        ClimberRamp2.set(Value.kReverse);
+        ClimberPneu.set(Value.kReverse);
     }
 
     public void ClimberForward(){

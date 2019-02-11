@@ -6,9 +6,12 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.*;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.command.Command;
+
 
 public class MoveLiftManual extends Command {
-double position;
+double position = 0;
+
 public MoveLiftManual(){
     requires(Robot.lift);
     this.position = RobotMap.Lift1.getSelectedSensorPosition(0);

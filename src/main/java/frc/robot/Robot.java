@@ -36,7 +36,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain driveTrain;
   public static Lift lift;
   public static Climber climber;
-  public static Booleans booleans;
+  public static Boolean booleans;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -55,7 +55,7 @@ public class Robot extends TimedRobot {
     lift = new Lift();
     climber = new Climber();
     Robot.driveTrain.pigeon.setYaw(0, 0);
-    booleans.IsEndGame = false;
+    booleans= false;
 
     Compressor compressor = new Compressor (0);
 

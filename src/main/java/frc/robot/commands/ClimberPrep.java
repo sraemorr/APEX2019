@@ -8,7 +8,7 @@ import frc.robot.utils.Booleans;
 
 public class ClimberPrep extends CommandGroup{
     public ClimberPrep(){
-        Robot.booleans.IsEndGame = true;
+        Robot.booleans = true;
         addParallel(new ExtendClimber());
         addSequential(new MoveLift(1000));
         addSequential(new LockElevator());
