@@ -20,7 +20,7 @@ import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.Compressor; 
-import frc.robot.Booleans;
+import frc.robot.utils.Booleans;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,12 +31,12 @@ import frc.robot.Booleans;
  */
 public class Robot extends TimedRobot {
   public static OI oi = new OI();
-  public static CargoIntake cargoIntake
-  public static Crossbow crossbow
-  public static DriveTrain driveTrain
-  public static Lift lift
-  public static Climber climber
-  public static Booleans booleans
+  public static CargoIntake cargoIntake;
+  public static Crossbow crossbow;
+  public static DriveTrain driveTrain;
+  public static Lift lift;
+  public static Climber climber;
+  public static Booleans booleans;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 

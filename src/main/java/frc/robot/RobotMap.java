@@ -15,11 +15,8 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
  */
 import frc.robot.utils.ControllerConfig;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.models.*;
-import frc.robot.utils.ControllerConfig;
-
 
 public class RobotMap {
 
