@@ -1,20 +1,20 @@
 package frc.robot.subsystems;
 
 import frc.robot.OI;
-import frc.robot.Robot;
+// import frc.robot.Robot;
 import frc.robot.models.*;
 import frc.robot.RobotMap;
 import frc.robot.commands.Drive;
-import frc.robot.commands.DriveVelocityPIDTest;
+// import frc.robot.commands.DriveVelocityPIDTest;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+// import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+// import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.sensors.PigeonIMU;
 
 
@@ -25,7 +25,7 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 public class DriveTrain extends Subsystem {
 	public BobTalonSRX L1 = RobotMap.L1;
 	public BobTalonSRX R1 = RobotMap.R1;
-	public static PigeonIMU pigeon = new PigeonIMU(0);
+	public PigeonIMU pigeon = new PigeonIMU(0);
 	
 	public static int HIGH_GEAR_PROFILE = 0;
 	public static int ROTATION_PROFILE = 1;

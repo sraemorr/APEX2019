@@ -1,9 +1,9 @@
 package frc.robot.commands;
-import frc.robot.OI;
+// import frc.robot.OI;
 import frc.robot.Robot;
-import frc.robot.subsystems.Lift;
+// import frc.robot.subsystems.Lift;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+// import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.*;
 import frc.robot.RobotMap;
 

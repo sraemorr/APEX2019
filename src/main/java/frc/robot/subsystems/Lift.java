@@ -3,11 +3,11 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.MoveLift;
+// import frc.robot.commands.MoveLift;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import frc.robot.utils.Booleans;
-import frc.robot.Robot;
+// import frc.robot.utils.Booleans;
+// import frc.robot.Robot;
 
 
 public class Lift extends Subsystem{

@@ -13,17 +13,17 @@ import frc.robot.utils.POVTrigger;
 import frc.robot.utils.TriggerButton;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.buttons.Trigger;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+// import edu.wpi.first.wpilibj.buttons.Trigger;
+// import edu.wpi.first.wpilibj.command.Command;
+// import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.EatCargo;
 import frc.robot.commands.CrossbowBoop;
 import frc.robot.commands.MoveLift;
-import frc.robot.commands.MoveLiftManual;
+// import frc.robot.commands.MoveLiftManual;
 import frc.robot.commands.CrossbowAcquire;
 import frc.robot.commands.SpitCargo;
 import frc.robot.commands.CrawlForward; 
-import frc.robot.commands.ClimberPrep;
+// import frc.robot.commands.ClimberPrep;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -68,17 +68,17 @@ public class OI {
       
       
     POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
-		// DPAD_UP2.whenPressed(new MoveLift(80));
+		DPAD_UP2.whenPressed(new MoveLift(80));
 
 		POVTrigger DPAD_RIGHT2 = new POVTrigger(xbox2, 0, 90);
-		// DPAD_RIGHT2.whenPressed(new MoveLift(90));
+		DPAD_RIGHT2.whenPressed(new MoveLift(90));
 
 		POVTrigger DPAD_LEFT2 = new POVTrigger(xbox2, 0, 270);
-		// DPAD_LEFT2.whileHeld(new MoveLift(30));
+		DPAD_LEFT2.whenPressed(new MoveLift(30));
 		// DPAD_LEFT2.whenReleased(new MoveLift(40));
 
 		POVTrigger DPAD_DOWN2 = new POVTrigger(xbox2, 0, 180);
-		// DPAD_DOWN2.whenPressed(new MoveLift(3)); 
+		DPAD_DOWN2.whenPressed(new MoveLift(3)); 
       
     }
 
