@@ -10,9 +10,10 @@ import frc.robot.RobotMap;
 public class MoveLift extends Command {
 double position;
 double TargetPosition;
+
 public MoveLift(double TargetPosition){
-    requires(Robot.lift);
-    this.position= RobotMap.Lift1.getSelectedSensorPosition(0);
+    // requires(Robot.lift);
+    this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 
 protected void initialize(){
@@ -33,7 +34,7 @@ protected boolean isFinished() {
 
 }
 protected void end() {
-    new LiftHoldPosition();
+    // new LiftHoldPosition();
 
 }
 

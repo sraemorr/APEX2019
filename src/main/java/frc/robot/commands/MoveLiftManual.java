@@ -1,7 +1,7 @@
 package frc.robot.commands;
 import frc.robot.OI;
 import frc.robot.Robot;
-// import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Lift;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 // import edu.wpi.first.wpilibj.command.*;
@@ -10,10 +10,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 public class MoveLiftManual extends Command {
-double position = 0;
+double position;
+// public TalonSRX Lift1 = RobotMap.Lift1;
 
 public MoveLiftManual(){
-    requires(Robot.lift);
+    // requires(Robot.lift);
     this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 
@@ -36,7 +37,7 @@ protected boolean isFinished() {
 
 }
 protected void end() {
-   new LiftHoldPosition();
+//    new LiftHoldPosition();
 
 }
 
