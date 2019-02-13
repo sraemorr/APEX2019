@@ -24,9 +24,9 @@ public static int R3 = 2;
 public static int L2 = 3;
 public static int L3 = 4;
 
-//lift ids, all are talons
+//lift ids,  1 is talon 2 is victor
 public static int Lift1 = 3;
-public static int Lift2 = 4;
+public static int Lift2 = 8;
 
 public static int Lift_Solenoid1_Forward_Channel = 0;
 public static int Lift_Solenoid1_Reverse_Channel = 1;

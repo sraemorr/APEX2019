@@ -1,3 +1,4 @@
+
 package frc.robot.utils;
 import com.ctre.phoenix.motorcontrol.*;
 import com.ctre.phoenix.motorcontrol.can.*;
@@ -36,19 +37,16 @@ public class ControllerConfig{
         currentSPX.configPeakOutputReverse(-1);
     }
 
-    public static void setLift(TalonSRX currentSRX) {
+    public static void setLiftLead(TalonSRX currentSRX) {
         currentSRX.configFactoryDefault();
 
-        if (currentSRX == RobotMap.Lift1) {
+       
             currentSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
             currentSRX.config_kP(0, 1, 0);
             currentSRX.config_kI(0, 0, 0);
             currentSRX.config_kD(0, 0, 0);
             currentSRX.config_kF(0, 0, 0);
-        }
-        if (currentSRX == RobotMap.Lift2) {
-            currentSRX.follow(RobotMap.Lift1);
-        }
+       
         currentSRX.setInverted(false);
         currentSRX.setSensorPhase(true);
         currentSRX.configNominalOutputForward(0.0);
@@ -66,6 +64,15 @@ public class ControllerConfig{
         currentSRX.enableCurrentLimit(true);
         // currentSRX.configMotionAcceleration(500, 0); //TODO SET THESE
         // currentSRX.configMotionCruiseVelocity(1000, 0); //TODO SET THESE
+    }
+    public static void setLiftFollower(VictorSPX currentSPX, TalonSRX leaderSRX, Boolean isInverted) {
+        currentSPX.configFactoryDefault();
+        currentSPX.follow(leaderSRX);
+        currentSPX.setInverted(isInverted);
+        currentSPX.configNominalOutputForward(0.0);
+        currentSPX.configNominalOutputReverse(0.0);
+        currentSPX.configPeakOutputForward(1);
+        currentSPX.configPeakOutputReverse(-1);
     }
 
     public static void setClimber(TalonSRX currentSRX, Boolean isInverted){

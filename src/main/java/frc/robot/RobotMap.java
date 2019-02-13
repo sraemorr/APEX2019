@@ -30,7 +30,7 @@ public class RobotMap {
   public static VictorSPX L3;
 //lift stuff
   public static TalonSRX Lift1;
-  public static TalonSRX Lift2;
+  public static VictorSPX Lift2;
   public static DoubleSolenoid LiftSolenoid1;
   public static DoubleSolenoid LiftSolenoid2;
 //intake/eater stuff
@@ -64,11 +64,11 @@ public class RobotMap {
     ControllerConfig.setDriveFollower(R3, R1, R1.getInverted());
 //lift stuff
 Lift1 = new TalonSRX(PortMap.Lift1);
-Lift2 = new TalonSRX(PortMap.Lift2);
-Lift2.follow(Lift1);
+ControllerConfig.setLiftLead(Lift1);
+Lift2 = new VictorSPX(PortMap.Lift2);
+ControllerConfig.setLiftFollower(Lift2, Lift1, false);
 LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortMap.Lift_Solenoid1_Reverse_Channel);
-ControllerConfig.setLift(Lift1);
-ControllerConfig.setLift(Lift2);
+
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
 //crossbow stuff
