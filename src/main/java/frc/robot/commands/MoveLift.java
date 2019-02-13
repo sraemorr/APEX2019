@@ -33,7 +33,7 @@ protected boolean isFinished() {
 
 }
 protected void end() {
-    Robot.lift.lift(ControlMode.MotionMagic, RobotMap.Lift1.getSelectedSensorPosition(0));
+    new LiftHoldPosition();
 
 }
 
