@@ -19,14 +19,28 @@ public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
 
    
     public void lift(ControlMode controlmode, double position){
-    if (IsEndGame == false && position <= 0){
-        Lift1.set(ControlMode.MotionMagic, 1);
-    }
-    else{
-        Lift1.set(controlmode, position); 
-    }
+    // if (IsEndGame == false && position <= 0){
+    //     Lift1.set(ControlMode.MotionMagic, 1);
+    // }
+    // else{
+    //     Lift1.set(controlmode, position); 
+    // }
+    Lift1.set(controlmode, position);
    
    }
+
+   public void lift(double position){
+    // if (IsEndGame == false && position <= 0){
+    //     Lift1.set(ControlMode.MotionMagic, 1);
+    // }
+    // else{
+    //     Lift1.set(controlmode, position); 
+    // }
+    Lift1.set(ControlMode.PercentOutput, position);
+   
+   }
+
+   
 
    public void lockLift(){
     LiftSolenoid1.set(Value.kForward);

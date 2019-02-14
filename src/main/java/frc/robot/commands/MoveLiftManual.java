@@ -15,20 +15,22 @@ double position;
 
 public MoveLiftManual(){
     // requires(Robot.lift);
-    this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
+    // this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 
 protected void initialize(){
 
 }
 protected void execute(){
-    
-    if (OI.xbox2.getY(Hand.kLeft) >= 0.2  || OI.xbox2.getY(Hand.kLeft) <= -0.2) {
-        // Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
+    // Robot.lift.lift(ControlMode.PercentOutput, 0.5);
+    // Robot.lift.lift();
+
+    // if (OI.xbox2.getY(Hand.kLeft) >= 0.2  || OI.xbox2.getY(Hand.kLeft) <= -0.2) {
+    //     // Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
         Robot.lift.lift(ControlMode.PercentOutput, 0.5 * OI.xbox2.getY(Hand.kLeft));
-    }
+    // }
    
-    else end();
+    // else end();
 
 }
 

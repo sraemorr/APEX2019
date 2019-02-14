@@ -15,7 +15,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 // import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.sensors.PigeonIMU;
+// import com.ctre.phoenix.sensors.PigeonIMU;
 
 
 /**
@@ -25,7 +25,7 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 public class DriveTrain extends Subsystem {
 	public BobTalonSRX L1 = RobotMap.L1;
 	public BobTalonSRX R1 = RobotMap.R1;
-	public PigeonIMU pigeon = new PigeonIMU(0);
+	// public PigeonIMU pigeon = new PigeonIMU(0);
 	
 	public static int HIGH_GEAR_PROFILE = 0;
 	public static int ROTATION_PROFILE = 1;
@@ -160,7 +160,7 @@ public class DriveTrain extends Subsystem {
 
 	public double getAngle() {
 		double[] ypr = new double[3];
-		pigeon.getYawPitchRoll(ypr);
+		// pigeon.getYawPitchRoll(ypr);
 		return ypr[0];
 	}
 

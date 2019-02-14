@@ -44,7 +44,7 @@ public class RobotMap {
   public static DoubleSolenoid ClimberPneu1;
   public static DoubleSolenoid ClimberPneu2;
   public static TalonSRX Climber1;
-  public static TalonSRX Climber2;
+  public static VictorSPX Climber2;
 
   public static void init(){
     System.out.println("Initializing Speed Controllers");
@@ -57,7 +57,7 @@ public class RobotMap {
     ControllerConfig.setDriveFollower(L3, L1, L1.getInverted());
 
     //right side drive base
-    R1 = new BobTalonSRX(PortMap.R1, true); //Create lead drive talon with inversion settings
+    R1 = new BobTalonSRX(PortMap.R1, false); //Create lead drive talon with inversion settings
     R2 = new VictorSPX(PortMap.R2);
     ControllerConfig.setDriveFollower(R2, R1, R1.getInverted());
     R3 = new VictorSPX(PortMap.R3);
@@ -71,16 +71,15 @@ LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortM
 
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
-//crossbow stuff
-Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
-//climber stuff
+// //crossbow stuff
+// Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
+// //climber stuff
 ClimberPneu1 = new DoubleSolenoid(PortMap.ClimberSolenoid1_Forward_Channel, PortMap.ClimberSolenoid1_Reverse_Channel);
 
 Climber1 = new TalonSRX(PortMap.Climber1);
-Climber2 = new TalonSRX(PortMap.Climber2);
-Climber2.follow(Climber1);
-ControllerConfig.setClimber(Climber1, false);
-ControllerConfig.setClimber(Climber2, false);
+ControllerConfig.setClimbLead(Climber1, false);
+Climber2 = new VictorSPX(PortMap.Climber2);
+ControllerConfig.setClimbFollower(Climber2, Climber1, false);
 }
 
 

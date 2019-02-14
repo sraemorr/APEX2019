@@ -49,12 +49,12 @@ public class Robot extends TimedRobot {
     RobotMap.init();
 
     oi = new OI();
-    // cargoIntake = new CargoIntake();
-    // crossbow = new Crossbow();
+    cargoIntake = new CargoIntake();
+    crossbow = new Crossbow();
     driveTrain = new DriveTrain();
     lift = new Lift();
     climber = new Climber();
-    Robot.driveTrain.pigeon.setYaw(0, 0);
+    // Robot.driveTrain.pigeon.setYaw(0, 0);
     booleans= false;
 
     Compressor compressor = new Compressor (0);
@@ -72,7 +72,7 @@ public class Robot extends TimedRobot {
     driveTrain.configGains(rotationGains);
     driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
     driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
-    driveTrain.pigeon.setYaw(0,0);
+    // driveTrain.pigeon.setYaw(0,0);
 
   }
 
@@ -116,7 +116,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_chooser.getSelected();
-    Robot.driveTrain.pigeon.setYaw(0, 0);
+    // Robot.driveTrain.pigeon.setYaw(0, 0);
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -152,7 +152,7 @@ public class Robot extends TimedRobot {
     RobotMap.R1.setSelectedSensorPosition(0);
     RobotMap.L1.setSelectedSensorPosition(0);
 
-    Robot.driveTrain.pigeon.setYaw(0, 0);
+    // Robot.driveTrain.pigeon.setYaw(0, 0);
   }
 
   /**

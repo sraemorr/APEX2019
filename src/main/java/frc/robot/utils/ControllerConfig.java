@@ -75,12 +75,9 @@ public class ControllerConfig{
         currentSPX.configPeakOutputReverse(-1);
     }
 
-    public static void setClimber(TalonSRX currentSRX, Boolean isInverted){
+    public static void setClimbLead(TalonSRX currentSRX, Boolean isInverted){
         currentSRX.configFactoryDefault();
-        currentSRX.setInverted(isInverted);
-        if(currentSRX == RobotMap.Climber2){
-            currentSRX.follow(RobotMap.Climber1);
-        }
+        
         currentSRX.configNominalOutputForward(0.0);
 		currentSRX.configNominalOutputReverse(0.0);
 		currentSRX.configPeakOutputForward(1);
@@ -89,5 +86,15 @@ public class ControllerConfig{
         // currentSRX.configPeakCurrentLimit(40);
         // currentSRX.configPeakCurrentDuration(0, 0);
         currentSRX.enableCurrentLimit(false);
+    }
+
+    public static void setClimbFollower(VictorSPX currentSPX, TalonSRX leaderSRX, Boolean isInverted) {
+        currentSPX.configFactoryDefault();
+        currentSPX.follow(leaderSRX);
+        currentSPX.setInverted(isInverted);
+        currentSPX.configNominalOutputForward(0.0);
+        currentSPX.configNominalOutputReverse(0.0);
+        currentSPX.configPeakOutputForward(1);
+        currentSPX.configPeakOutputReverse(-1);
     }
 }
