@@ -84,7 +84,7 @@ ClimberPneu1 = new DoubleSolenoid(PortMap.ClimberSolenoid1_Forward_Channel, Port
 Climber1 = new TalonSRX(PortMap.Climber1);
 ControllerConfig.setClimbLead(Climber1, false);
 Climber2 = new VictorSPX(PortMap.Climber2);
-ControllerConfig.setClimbFollower(Climber2, Climber1, false);
+ControllerConfig.setClimbFollower(Climber2, Climber1, true);
 }
 
 

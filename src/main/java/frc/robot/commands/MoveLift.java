@@ -13,15 +13,14 @@ double TargetPosition;
 
 public MoveLift(double TargetPosition){
     // requires(Robot.lift);
-    this.position = -1 * RobotMap.Lift1.getSelectedSensorPosition(0);
+    this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 
 protected void initialize(){
 
 }
 protected void execute(double TargetPosition){
-    
-    Robot.lift.lift(ControlMode.MotionMagic,  -TargetPosition);
+    Robot.lift.lift(ControlMode.MotionMagic, TargetPosition);
     
 }
 
