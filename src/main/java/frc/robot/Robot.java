@@ -19,7 +19,10 @@ import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.DriveTrain;
-import edu.wpi.first.wpilibj.Compressor; 
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import frc.robot.commands.ReleaseLift;
 // import frc.robot.utils.Booleans;
 
 /**
@@ -37,6 +40,7 @@ public class Robot extends TimedRobot {
   public static Lift lift;
   public static Climber climber;
   public static Boolean booleans;
+  public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -73,6 +77,7 @@ public class Robot extends TimedRobot {
     driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
     driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
     // driveTrain.pigeon.setYaw(0,0);
+    new ReleaseLift();
 
   }
 
@@ -95,6 +100,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
+    new ReleaseLift();
   }
 
   @Override
@@ -151,7 +157,7 @@ public class Robot extends TimedRobot {
     RobotMap.Lift1.setSelectedSensorPosition(0);
     RobotMap.R1.setSelectedSensorPosition(0);
     RobotMap.L1.setSelectedSensorPosition(0);
-
+    new ReleaseLift();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
   }
 

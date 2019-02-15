@@ -16,7 +16,9 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import frc.robot.utils.ControllerConfig;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import frc.robot.models.*;
+import frc.robot.commands.ReleaseLift;
 
 public class RobotMap {
 
@@ -51,6 +53,7 @@ public class RobotMap {
 
     //left side drive base
     L1 = new BobTalonSRX(PortMap.L1, false); //Create lead drive talon with inversion settings
+    ControllerConfig.setDriveLeader(L1, false);
     L2 = new VictorSPX(PortMap.L2);
     ControllerConfig.setDriveFollower(L2, L1, L1.getInverted());
     L3 = new VictorSPX(PortMap.L3);
@@ -58,6 +61,7 @@ public class RobotMap {
 
     //right side drive base
     R1 = new BobTalonSRX(PortMap.R1, false); //Create lead drive talon with inversion settings
+    ControllerConfig.setDriveLeader(R1, false);
     R2 = new VictorSPX(PortMap.R2);
     ControllerConfig.setDriveFollower(R2, R1, R1.getInverted());
     R3 = new VictorSPX(PortMap.R3);
@@ -68,11 +72,12 @@ ControllerConfig.setLiftLead(Lift1);
 Lift2 = new VictorSPX(PortMap.Lift2);
 ControllerConfig.setLiftFollower(Lift2, Lift1, false);
 LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortMap.Lift_Solenoid1_Reverse_Channel);
+new ReleaseLift();
 
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
 // //crossbow stuff
-// Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
+Crossbow1 = new DoubleSolenoid(PortMap.Crossbow1_Forward_Channel, PortMap.Crossbow1_Reverse_Channel);
 // //climber stuff
 ClimberPneu1 = new DoubleSolenoid(PortMap.ClimberSolenoid1_Forward_Channel, PortMap.ClimberSolenoid1_Reverse_Channel);
 

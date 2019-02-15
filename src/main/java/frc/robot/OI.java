@@ -41,8 +41,8 @@ public class OI {
          RPT2.whileHeld(new MoveLiftManual());
       // Button LPT2=new JoystickButton(xbox2, 2 );  // 2 is equal to B
       //  LPT2.whileHeld(new MoveLiftManual());
-      // Button RPB2=new JoystickButton(xbox2, 3); //3 = X
-          // RPB2.whenPressed(new ClimberPrep());
+      Button RPB2=new JoystickButton(xbox2, 3); //3 = X
+          RPB2.whenPressed(new ClimberPrep());
       // Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
       //     LPB2.whenActive(new MoveLiftManual()); // 3 is equal to X
           // LPB2.whenReleased(new LiftHoldPosition());
