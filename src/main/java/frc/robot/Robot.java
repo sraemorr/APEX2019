@@ -76,6 +76,7 @@ public class Robot extends TimedRobot {
     driveTrain.configGains(rotationGains);
     driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
     driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
+    lift.Lift1.setSelectedSensorPosition(0);
     // driveTrain.pigeon.setYaw(0,0);
     new ReleaseLift();
 

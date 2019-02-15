@@ -18,25 +18,25 @@ public TalonSRX Lift1 = RobotMap.Lift1;
 public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
 
    
-    public void lift(ControlMode controlmode, double position){
+    public void lift(ControlMode controlmode, double TargetPosition){
     // if (IsEndGame == false && position <= 0){
     //     Lift1.set(ControlMode.MotionMagic, 1);
     // }
     // else{
     //     Lift1.set(controlmode, position); 
     // }
-    Lift1.set(controlmode, position);
+    Lift1.set(controlmode, TargetPosition);
    
    }
 
-   public void lift(double position){
+   public void lift(double power){
     // if (IsEndGame == false && position <= 0){
     //     Lift1.set(ControlMode.MotionMagic, 1);
     // }
     // else{
-    //     Lift1.set(controlmode, position); 
+    //     Lift1.set(ControlMode.PercentOutput, power); 
     // }
-    Lift1.set(ControlMode.PercentOutput, position);
+    Lift1.set(ControlMode.PercentOutput, power);
    
    }
 

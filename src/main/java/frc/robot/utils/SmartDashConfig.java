@@ -11,7 +11,7 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 
 public class SmartDashConfig {
     public static void Testing() {
-        SmartDashboard.putNumber("Lift1 encoder position", RobotMap.Lift1.getSelectedSensorPosition(0));
+        SmartDashboard.putNumber("Lift1 encoder position",-1 * RobotMap.Lift1.getSelectedSensorPosition(0));
         SmartDashboard.putNumber("L1 encoder position", RobotMap.L1.getSelectedSensorPosition(0));
         SmartDashboard.putNumber("R1 encoder position", RobotMap.R1.getSelectedSensorPosition(0));
         SmartDashboard.putNumber("RobotAngle", 50. * Robot.driveTrain.getAngle());

@@ -60,8 +60,8 @@ public class RobotMap {
     ControllerConfig.setDriveFollower(L3, L1, L1.getInverted());
 
     //right side drive base
-    R1 = new BobTalonSRX(PortMap.R1, false); //Create lead drive talon with inversion settings
-    ControllerConfig.setDriveLeader(R1, false);
+    R1 = new BobTalonSRX(PortMap.R1, true); //Create lead drive talon with inversion settings
+    ControllerConfig.setDriveLeader(R1, true);
     R2 = new VictorSPX(PortMap.R2);
     ControllerConfig.setDriveFollower(R2, R1, R1.getInverted());
     R3 = new VictorSPX(PortMap.R3);
