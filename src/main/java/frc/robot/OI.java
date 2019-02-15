@@ -23,6 +23,8 @@ import frc.robot.commands.MoveLiftManual;
 import frc.robot.commands.CrossbowAcquire;
 import frc.robot.commands.SpitCargo;
 import frc.robot.commands.ClimberPrep;
+import frc.robot.commands.CrawlForward;
+import frc.robot.commands.CrawlBack;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -57,9 +59,12 @@ public class OI {
         	// Y1.whileActive(new CrossbowBoop());
         	// Y1.whenInactive(new CrossbowAcquire());
       TriggerButton RT2=new TriggerButton(xbox2, 3);
-        RT2.whileActive(new CrossbowBoop());
-        RT2.whenInactive(new CrossbowAcquire());
-      
+        RT2.whileActive(new SpitCargo());
+        RT2.whileActive(new CrawlBack());
+
+      TriggerButton LT2 = new TriggerButton(xbox2, 4);
+        LT2.whileActive(new EatCargo());
+        LT2.whileActive(new CrawlForward());
       
       
     POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
