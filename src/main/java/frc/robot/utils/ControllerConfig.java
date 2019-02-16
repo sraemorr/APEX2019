@@ -76,19 +76,23 @@ public class ControllerConfig{
     }
 
     public static void setClimbLead(TalonSRX currentSRX){
+        System.out.println("Configuring Climb Lead" + currentSRX.getInverted());
         currentSRX.configFactoryDefault();
         currentSRX.setInverted(false);
         currentSRX.configNominalOutputForward(0.0);
 		currentSRX.configNominalOutputReverse(0.0);
 		currentSRX.configPeakOutputForward(1);
         currentSRX.configPeakOutputReverse(-1);
-        // currentSRX.configContinuousCurrentLimit(40);
-        // currentSRX.configPeakCurrentLimit(40);
-        // currentSRX.configPeakCurrentDuration(0, 0);
-        currentSRX.enableCurrentLimit(false);
+        currentSRX.configContinuousCurrentLimit(40);
+        currentSRX.configPeakCurrentLimit(40);
+        currentSRX.configPeakCurrentDuration(0, 0);
+        currentSRX.enableCurrentLimit(true);
+        System.out.println("Done Configuring Climb Lead" + currentSRX.getInverted());
+
     }
 
     public static void setClimbFollower(VictorSPX currentSPX, TalonSRX leaderSRX) {
+        System.out.println("Configuring Climb Follower" + currentSPX.getInverted());
         currentSPX.configFactoryDefault();
         currentSPX.follow(leaderSRX);
         currentSPX.setInverted(true);
@@ -96,5 +100,7 @@ public class ControllerConfig{
         currentSPX.configNominalOutputReverse(0.0);
         currentSPX.configPeakOutputForward(1);
         currentSPX.configPeakOutputReverse(-1);
+        System.out.println("Done Configuring Climb Follower, Inversion: " + currentSPX.getInverted());
+
     }
 }
