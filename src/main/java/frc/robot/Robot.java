@@ -69,11 +69,6 @@ public class Robot extends TimedRobot {
 
     compressor.setClosedLoopControl(true);
 
-    SRXGains highGearGains = new SRXGains(DriveTrain.HIGH_GEAR_PROFILE, 1.4, 0.0, 8.0, 0.25, 0);
-    SRXGains rotationGains = new SRXGains(DriveTrain.ROTATION_PROFILE, 1.6, 0.0, 50, 0.0, 0);
-
-    driveTrain.configGains(highGearGains);
-    driveTrain.configGains(rotationGains);
     driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
     driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
     lift.Lift1.setSelectedSensorPosition(0);

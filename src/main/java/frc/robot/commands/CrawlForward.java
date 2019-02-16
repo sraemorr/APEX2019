@@ -15,7 +15,7 @@ public class CrawlForward extends Command{
     }
 
     protected void execute(){
-        Robot.climber.ClimberForward();
+        Robot.climber.ClimberManualForward();
     }
 
     protected boolean isFinished(){

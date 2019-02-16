@@ -22,16 +22,18 @@ protected void initialize(){
 
 }
 protected void execute(){
+    this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
     // Robot.lift.lift(ControlMode.PercentOutput, 0.5);
     // Robot.lift.lift();
 
-    // if (OI.xbox2.getY(Hand.kLeft) >= 0.2  || OI.xbox2.getY(Hand.kLeft) <= -0.2) {
-    //     // Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
+    if (OI.xbox2.getY(Hand.kLeft) >= 0.2  || OI.xbox2.getY(Hand.kLeft) <= -0.2) {
+        // Robot.lift.lift(ControlMode.MotionMagic, position + 10*OI.xbox2.getY(Hand.kLeft));
         Robot.lift.lift(ControlMode.PercentOutput, -0.5 * OI.xbox2.getY(Hand.kLeft));
-    // }
+    }
    
-    // else end();
-
+    else {
+        end();
+    }
 }
 
 
@@ -45,7 +47,7 @@ protected void end() {
 }
 
 protected void interrupted(){
-    
+    end();
 }
 
 }

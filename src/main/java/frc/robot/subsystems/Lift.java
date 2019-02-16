@@ -6,6 +6,8 @@ import frc.robot.RobotMap;
 // import frc.robot.commands.MoveLift;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import frc.robot.OI;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 // import frc.robot.utils.Booleans;
 // import frc.robot.Robot;
 
@@ -25,6 +27,9 @@ public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
     // else{
     //     Lift1.set(controlmode, position); 
     // }
+    
+        // Lift1.set(ControlMode.MotionMagic, TargetPosition);
+      
     Lift1.set(controlmode, TargetPosition);
    
    }
@@ -35,9 +40,13 @@ public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
     // }
     // else{
     //     Lift1.set(ControlMode.PercentOutput, power); 
-    // }
+    // 
+     if(OI.xbox2.getY(Hand.kRight) >= 0.2 || OI.xbox2.getY(Hand.kRight) <= -0.2) {
     Lift1.set(ControlMode.PercentOutput, power);
-   
+     }
+     else{
+         end();
+     }
    }
 
    
