@@ -59,6 +59,7 @@ public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
     LiftSolenoid1.set(Value.kReverse);
    }
    public void end(){
+       
     
    }
     public void initDefaultCommand(){
