@@ -12,7 +12,7 @@ public class EatCargo extends Command {
     }
 
     protected void execute() {
-     Robot.cargoIntake.Intake();
+     Robot.cargoIntake.IntakeManual();
     }
 
     public boolean isFinished(){

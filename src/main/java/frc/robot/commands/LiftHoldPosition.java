@@ -9,7 +9,7 @@ public class LiftHoldPosition extends Command {
 
     public LiftHoldPosition() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.lift);
+        // requires(Robot.lift);
     }
 
     // Called just before this Command runs the first time

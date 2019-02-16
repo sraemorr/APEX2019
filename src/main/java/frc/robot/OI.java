@@ -72,7 +72,7 @@ public class OI {
         RT2.whileActive(new SpitCargo());
         RT2.whileActive(new CrawlBack());
 
-      TriggerButton LT2 = new TriggerButton(xbox2, 4);
+      TriggerButton LT2 = new TriggerButton(xbox2, 2);
         LT2.whileActive(new EatCargo());
         LT2.whileActive(new CrawlForward());
       

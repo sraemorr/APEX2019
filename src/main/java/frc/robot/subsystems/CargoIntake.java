@@ -18,35 +18,27 @@ public class CargoIntake extends Subsystem {
     public TalonSRX Intake = RobotMap.Intake;
 
     public void Intake(){
-        RobotMap.Intake.set(ControlMode.PercentOutput, -0.5);
+        RobotMap.Intake.set(ControlMode.PercentOutput, 0.5);
     }
 
     public void IntakeManual(){
-        if(OI.xbox2.getTriggerAxis(Hand.kLeft) <= -0.2){
             Intake.set(ControlMode.PercentOutput, 0.5 * OI.xbox2.getTriggerAxis(Hand.kLeft));
-        }
        
-        else {
-            end();
-        }
     }
 
     public void Expel(){
-        RobotMap.Intake.set(ControlMode.PercentOutput, 0.5 );
+        RobotMap.Intake.set(ControlMode.PercentOutput, -0.5 );
        
 
     }
 
     public void ExpelManual(){
-        if(OI.xbox2.getTriggerAxis(Hand.kLeft) >= 0.2){
             Intake.set(ControlMode.PercentOutput, -0.5 * OI.xbox2.getTriggerAxis(Hand.kRight));
-        }
-        else if(OI.xbox2.getTriggerAxis(Hand.kRight) >= -0.2){
-            Intake.set(ControlMode.PercentOutput, -0.5 * OI.xbox2.getTriggerAxis(Hand.kRight));
-        }
-        else{
-            end();
-        }
+        
+        // else if(OI.xbox2.getTriggerAxis(Hand.kRight) >= -0.2){
+        //     Intake.set(ControlMode.PercentOutput, -0.5 * OI.xbox2.getTriggerAxis(Hand.kRight));
+        // }
+        
     }
 
  

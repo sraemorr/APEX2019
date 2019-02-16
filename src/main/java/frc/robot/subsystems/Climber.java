@@ -37,24 +37,15 @@ public class Climber extends Subsystem{
     }
 
     public void ClimberManualForward(){
-        if(OI.xbox2.getTriggerAxis(Hand.kLeft) >= 0.2){
+        
             Climber1.set(ControlMode.PercentOutput, 0.5 * OI.xbox2.getTriggerAxis(Hand.kLeft));
-        }
-        else{
-            ClimberStop();
-        }
+        
+        
     }
 
     public void ClimberManualBack(){
-        if(OI.xbox2.getTriggerAxis(Hand.kRight) >= 0.2){
             Climber1.set(ControlMode.PercentOutput, -0.5 * OI.xbox2.getTriggerAxis(Hand.kRight));
-        }
-        else if(OI.xbox2.getTriggerAxis(Hand.kRight) >= -0.2){
-            Climber1.set(ControlMode.PercentOutput, -0.5 * OI.xbox2.getTriggerAxis(Hand.kRight));            
-        }
-        else{
-            ClimberStop();
-        }
+        
     }
 
     @Override

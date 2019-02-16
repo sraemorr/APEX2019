@@ -12,7 +12,7 @@ public class SpitCargo extends Command {
     }
 
     protected void execute() {
-     Robot.cargoIntake.Expel();
+     Robot.cargoIntake.ExpelManual();
     }
 
     public boolean isFinished(){
