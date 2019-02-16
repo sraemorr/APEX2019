@@ -20,6 +20,7 @@ public class SpitCargo extends Command {
     }
 
     protected void interrupted() {
+        end();
     }
 
     protected void end() {

@@ -21,8 +21,8 @@ import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-import frc.robot.commands.ReleaseLift;
+// import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+// import frc.robot.commands.ReleaseLift;
 // import frc.robot.utils.Booleans;
 
 /**
@@ -73,7 +73,7 @@ public class Robot extends TimedRobot {
     driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
     lift.Lift1.setSelectedSensorPosition(0);
     // driveTrain.pigeon.setYaw(0,0);
-    new ReleaseLift();
+    // new ReleaseLift();
 
   }
 
@@ -96,7 +96,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
-    new ReleaseLift();
+    // new ReleaseLift();
   }
 
   @Override
@@ -153,7 +153,7 @@ public class Robot extends TimedRobot {
     RobotMap.Lift1.setSelectedSensorPosition(0);
     RobotMap.R1.setSelectedSensorPosition(0);
     RobotMap.L1.setSelectedSensorPosition(0);
-    new ReleaseLift();
+    // new ReleaseLift();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
   }
 

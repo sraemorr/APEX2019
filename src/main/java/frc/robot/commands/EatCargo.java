@@ -20,6 +20,7 @@ public class EatCargo extends Command {
     }
 
     protected void interrupted() {
+        end();
     }
 
     protected void end() {
