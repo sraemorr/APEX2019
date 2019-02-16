@@ -22,6 +22,7 @@ import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.utils.SmartDashConfig;
+import edu.wpi.first.cameraserver.*;
 // import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 // import frc.robot.commands.ReleaseLift;
 // import frc.robot.utils.Booleans;
@@ -61,7 +62,7 @@ public class Robot extends TimedRobot {
     climber = new Climber();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
     booleans= false;
-
+    CameraServer.getInstance().startAutomaticCapture();
     Compressor compressor = new Compressor (0);
 
     // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
