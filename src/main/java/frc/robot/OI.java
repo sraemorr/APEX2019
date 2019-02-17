@@ -17,10 +17,14 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 // import edu.wpi.first.wpilibj.command.Command;
 // import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.EatCargo;
+import frc.robot.commands.ExtendClimber;
 import frc.robot.commands.LiftHoldPosition;
+import frc.robot.commands.LockElevator;
+import frc.robot.commands.UnlockElevator;
 import frc.robot.commands.CrossbowBoop;
 import frc.robot.commands.MoveLift;
 import frc.robot.commands.MoveLiftManual;
+import frc.robot.commands.RetractClimber;
 import frc.robot.commands.CrossbowAcquire;
 import frc.robot.commands.SpitCargo;
 import frc.robot.commands.CrawlForward; 
@@ -42,10 +46,14 @@ public class OI {
       Button RPT2=new JoystickButton(xbox2, 1);  // 1 is equal to A
          RPT2.whileHeld(new MoveLiftManual());
         //  RPT2.whenInactive(new LiftHoldPosition());
-      // Button LPT2=new JoystickButton(xbox2, 2 );  // 2 is equal to B
+      Button LPT2=new JoystickButton(xbox2, 2 );  // 2 is equal to B
+      LPT2.whileHeld(new LockElevator());
+     // LPT2.whenInactive(new UnlockElevator());
       //  LPT2.whileHeld(new MoveLiftManual());
       Button RPB2=new JoystickButton(xbox2, 3); //3 = X
-          RPB2.whenPressed(new ClimberPrep());
+          // RPB2.whenPressed(new ClimberPrep());
+          RPB2.whileHeld(new ExtendClimber());
+         // RPB2.whenInactive(new RetractClimber());
       // Button LPB2=new JoystickButton(xbox2, 3);  //Change this to appropriate paddle value after testing
       //     LPB2.whenActive(new MoveLiftManual()); // 3 is equal to X
           // LPB2.whenReleased(new LiftHoldPosition());
@@ -75,6 +83,7 @@ public class OI {
       TriggerButton LT2 = new TriggerButton(xbox2, 2);
         LT2.whileActive(new EatCargo());
         LT2.whileActive(new CrawlForward());
+
       
       
     // POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);

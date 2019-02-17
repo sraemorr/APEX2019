@@ -23,7 +23,7 @@ public class LockElevator extends Command{
     }
 
     protected void end(){
-
+Robot.lift.releaseLift();
     }
 
     protected void interrupted(){
