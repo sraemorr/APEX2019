@@ -38,9 +38,10 @@ public static int Intake = 5;
 public static int Crossbow1_Forward_Channel = 1; //1, 6 for crossbow
 public static int Crossbow1_Reverse_Channel = 6;
 
+
 //Climber PDP stuff, solenoid IDs (adjust later)
-public static int ClimberSolenoid1_Forward_Channel = 3; //4, 3 are for climber
-public static int ClimberSolenoid1_Reverse_Channel = 4;
+public static int ClimberSolenoid1_Forward_Channel = 4; //4, 3 are for climber
+public static int ClimberSolenoid1_Reverse_Channel = 3;
 
 //climber speed controller ids,1 is talon 2 is victor
 public static int Climber1 = 6;

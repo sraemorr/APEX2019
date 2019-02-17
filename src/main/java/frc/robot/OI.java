@@ -46,7 +46,7 @@ public class OI {
       Button RPT2=new JoystickButton(xbox2, 1);  // 1 is equal to A
          RPT2.whileHeld(new MoveLiftManual());
         //  RPT2.whenInactive(new LiftHoldPosition());
-      Button LPT2=new JoystickButton(xbox2, 2 );  // 2 is equal to B
+      Button LPT2=new JoystickButton(xbox1, 2 );  // 2 is equal to B
       LPT2.whileHeld(new LockElevator());
      // LPT2.whenInactive(new UnlockElevator());
       //  LPT2.whileHeld(new MoveLiftManual());
