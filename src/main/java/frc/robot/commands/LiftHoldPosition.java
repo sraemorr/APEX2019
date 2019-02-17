@@ -18,10 +18,11 @@ public class LiftHoldPosition extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.println("Holding Extender position");
 //    	double angle = RobotMap.Arm1.getClosedLoopTarget(0);
-    	double liftPosition = RobotMap.Lift1.getSelectedSensorPosition(0);
-    	 new MoveLift(liftPosition);
+        double liftPosition = RobotMap.Lift1.getSelectedSensorPosition(0);
+         new MoveLift(liftPosition);
+         System.out.println("Holding Extender position at" + liftPosition);
+
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -31,6 +32,7 @@ public class LiftHoldPosition extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+        
     }
 
     // Called when another command which requires one or more of the same
