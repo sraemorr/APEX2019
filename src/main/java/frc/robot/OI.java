@@ -60,7 +60,8 @@ public class OI {
       // LPB2.whenInactive();
 //4 is equal to Y
       Button Y2 = new JoystickButton(xbox2, 4);
-        Y2.whileHeld(new CrawlForward());
+      Y2.whileHeld(new CrossbowBoop());
+        // Y2.whileHeld(new CrawlForward());
       Button LB2=new JoystickButton(xbox2,5);
           // LB2.whenPressed(new CrawlForward());
           // LB2.whileHeld(new EatCargo());
@@ -69,8 +70,9 @@ public class OI {
       // Button RB1=new JoystickButton(xbox2,6);
           // RB1.whileHeld(new SpitCargo());
       Button RB2=new JoystickButton(xbox2,6);
-        RB2.whileHeld(new CrossbowBoop());
-        RB2.whenInactive(new CrossbowAcquire());
+        RB2.whenPressed(new CrossbowBoop());
+        RB2.whenReleased(new CrossbowAcquire());
+        // RB2.whenInactive(new CrossbowAcquire());
         
 
       // Button Y1=new JoystickButton(xbox1,4);
@@ -86,24 +88,24 @@ public class OI {
 
       
       
-    POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
-    DPAD_UP2.whenPressed(new MoveLift(19000));
-    DPAD_UP2.whenReleased(new LiftHoldPosition());
+    // POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
+    // DPAD_UP2.whenPressed(new MoveLift(19000));
+    // DPAD_UP2.whenReleased(new LiftHoldPosition());
 
-		POVTrigger DPAD_RIGHT2 = new POVTrigger(xbox2, 0, 90);
-    DPAD_RIGHT2.whenPressed(new MoveLift(16000));
-    DPAD_RIGHT2.whenReleased(new LiftHoldPosition());
+		// POVTrigger DPAD_RIGHT2 = new POVTrigger(xbox2, 0, 90);
+    // DPAD_RIGHT2.whenPressed(new MoveLift(16000));
+    // DPAD_RIGHT2.whenReleased(new LiftHoldPosition());
 
 
-		POVTrigger DPAD_LEFT2 = new POVTrigger(xbox2, 0, 270);
-    DPAD_LEFT2.whenPressed(new MoveLift(7600));
-    DPAD_LEFT2.whenReleased(new LiftHoldPosition());
+		// POVTrigger DPAD_LEFT2 = new POVTrigger(xbox2, 0, 270);
+    // DPAD_LEFT2.whenPressed(new MoveLift(7600));
+    // DPAD_LEFT2.whenReleased(new LiftHoldPosition());
 
-		// DPAD_LEFT2.whenReleased(new MoveLift(40));
+		// // DPAD_LEFT2.whenReleased(new MoveLift(40));
 
-		POVTrigger DPAD_DOWN2 = new POVTrigger(xbox2, 0, 180);
-    DPAD_DOWN2.whenPressed(new MoveLift(2100)); 
-    DPAD_DOWN2.whenReleased(new LiftHoldPosition());
+		// POVTrigger DPAD_DOWN2 = new POVTrigger(xbox2, 0, 180);
+    // DPAD_DOWN2.whenPressed(new MoveLift(2100)); 
+    // DPAD_DOWN2.whenReleased(new LiftHoldPosition());
 
       
     }

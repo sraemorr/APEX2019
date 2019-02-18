@@ -23,7 +23,7 @@ public class CrossbowBoop extends Command{
     }
 
     protected void end(){
-
+        Robot.crossbow.Acquire();
     }
 
     protected void interrupted(){

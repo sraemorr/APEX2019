@@ -22,7 +22,7 @@ public class ControllerConfig{
         leaderSRX.enableCurrentLimit(true);
 
         // leaderSRX.configMotionAcceleration(500, 0); 
-        leaderSRX.configOpenloopRamp(.7);
+        leaderSRX.configOpenloopRamp(.4);
         // currentSRX.configMotionCruiseVelocity(1000, 0); 
 
         leaderSRX.config_kP(0, 1, 0);
