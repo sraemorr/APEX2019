@@ -14,7 +14,7 @@ double position;
 // public TalonSRX Lift1 = RobotMap.Lift1;
 
 public MoveLiftManual(){
-    // requires(Robot.lift);
+    requires(Robot.lift);
     // this.position = RobotMap.Lift1.getSelectedSensorPosition(0);
 }
 

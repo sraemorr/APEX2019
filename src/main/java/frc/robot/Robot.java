@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Watchdog;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -35,7 +36,7 @@ import edu.wpi.first.cameraserver.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static OI oi = new OI();
+  public static OI oi;
   public static CargoIntake cargoIntake;
   public static Crossbow crossbow;
   public static DriveTrain driveTrain;
@@ -53,16 +54,18 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     RobotMap.init();
-
-    oi = new OI();
+    // WatchDog = new Watchdog();
+    // Watchdog.suppressTimeoutMessage(true);
     cargoIntake = new CargoIntake();
     crossbow = new Crossbow();
     driveTrain = new DriveTrain();
     lift = new Lift();
     climber = new Climber();
+    oi = new OI();
+    // Watchdog.disabled();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
     booleans= false;
-    CameraServer.getInstance().startAutomaticCapture();
+    //CameraServer.getInstance().startAutomaticCapture();
     Compressor compressor = new Compressor (0);
 
     // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
@@ -89,6 +92,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    SmartDashConfig.Testing();
 
   }
 
@@ -105,6 +109,8 @@ public class Robot extends TimedRobot {
   @Override
   public void disabledPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashConfig.Testing();
+
   }
 
   /**
@@ -142,6 +148,8 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashConfig.Testing();
+
   }
 
   @Override
@@ -166,6 +174,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashConfig.Testing();
   }
 
   /**
@@ -174,5 +183,7 @@ public class Robot extends TimedRobot {
   @Override
   public void testPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashConfig.Testing();
+
   }
 }

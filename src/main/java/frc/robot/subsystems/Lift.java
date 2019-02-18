@@ -31,6 +31,7 @@ public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
         // Lift1.set(ControlMode.MotionMagic, TargetPosition);
       
     Lift1.set(controlmode, TargetPosition);
+    System.out.println("Moving to" + TargetPosition);
    
    }
 
@@ -59,8 +60,10 @@ public DoubleSolenoid LiftSolenoid1 = RobotMap.LiftSolenoid1;
     LiftSolenoid1.set(Value.kReverse);
    }
    public void end(){
-       
-    
+   }
+
+   public void ZeroLift(){
+       Lift1.setSelectedSensorPosition(0);
    }
     public void initDefaultCommand(){
         // setDefaultCommand(new MoveLift(0));

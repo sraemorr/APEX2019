@@ -72,7 +72,7 @@ ControllerConfig.setLiftLead(Lift1);
 Lift2 = new VictorSPX(PortMap.Lift2);
 ControllerConfig.setLiftFollower(Lift2, Lift1, false);
 LiftSolenoid1 = new DoubleSolenoid(PortMap.Lift_Solenoid1_Forward_Channel, PortMap.Lift_Solenoid1_Reverse_Channel);
-new ReleaseLift();
+// new ReleaseLift();
 
 //intake stuff
 Intake = new TalonSRX(PortMap.Intake);
