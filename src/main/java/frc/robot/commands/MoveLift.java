@@ -20,31 +20,26 @@ public MoveLift(double TargetPosition){
 protected void initialize(){
 
 }
+
 protected void execute(){
     Robot.lift.lift(ControlMode.MotionMagic, GoalPosition);
-    System.out.println("Moving lift to" + GoalPosition);
-    
-    
+    // System.out.println("Moving lift to" + GoalPosition);
 }
-
 
 protected boolean isFinished() {
-    // if (RobotMap.Lift1.getSelectedSensorPosition(0) <= GoalPosition + 10 && RobotMap.Lift1.getSelectedSensorPosition(0) >= GoalPosition - 10){
-
-    // return true;
-    // }
-    // else return false;
-    return false;
-
+    if (RobotMap.Lift1.getSelectedSensorPosition(0) <= GoalPosition + 100 && RobotMap.Lift1.getSelectedSensorPosition(0) >= GoalPosition - 100){
+    return true;
+    }
+    else return false;
+    // return false;
 }
 protected void end() {
-    System.out.println("Going to Hold Position");
+    // System.out.println("Going to Hold Position");
     new LiftHoldPosition();
-
 }
 
 protected void interrupted(){
-    System.out.println("Interrupted");
+    // System.out.println("Interrupted");
     end();
 }
 

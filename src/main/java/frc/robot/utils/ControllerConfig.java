@@ -46,10 +46,10 @@ public class ControllerConfig {
     public static void setLiftLead(ApexTalonSRX currentSRX) {
         currentSRX.configFactoryDefault();
         currentSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
-        currentSRX.config_kP(0, 10, 0);
+        currentSRX.config_kP(0, .25, 0);
         currentSRX.config_kI(0, 0, 0);
-        currentSRX.config_kD(0, 100, 0);
-        currentSRX.config_kF(0, 4, 0);
+        currentSRX.config_kD(0, 0, 0);
+        currentSRX.config_kF(0, 0, 0);
 
         currentSRX.setInverted(false);
         currentSRX.setSensorPhase(false);
@@ -57,7 +57,7 @@ public class ControllerConfig {
         currentSRX.configNominalOutputReverse(0.0);
         currentSRX.configPeakOutputForward(1);
         currentSRX.configPeakOutputReverse(-1);
-        currentSRX.configAllowableClosedloopError(0, 0, 0);
+        currentSRX.configAllowableClosedloopError(0, 100, 0);
         currentSRX.configForwardSoftLimitEnable(false, 0);
         currentSRX.configReverseSoftLimitEnable(false, 0);
         // currentSRX.configForwardSoftLimitThreshold(30000,0);
