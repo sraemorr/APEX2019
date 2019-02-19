@@ -10,9 +10,8 @@ public class ClimberPrep extends CommandGroup{
     public ClimberPrep(){
         Robot.booleans = true;
         addParallel(new ExtendClimber());
-        // addSequential(new MoveLift(1000));
+        addSequential(new MoveLift(20758));
         addSequential(new LockElevator());
-        
     } 
 
 
