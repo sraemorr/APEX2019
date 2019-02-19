@@ -1,4 +1,5 @@
 package frc.robot.commands;
+
 // import frc.robot.OI;
 import frc.robot.Robot;
 // import frc.robot.subsystems.Lift;
@@ -8,39 +9,41 @@ import edu.wpi.first.wpilibj.command.*;
 import frc.robot.RobotMap;
 
 public class MoveLift extends Command {
-double position;
-double GoalPosition;
+    double position;
+    double GoalPosition;
 
-public MoveLift(double TargetPosition){
-    requires(Robot.lift);
-    this.position = RobotMap.Lift1.getSelectedSensorPosition();
-    this.GoalPosition = TargetPosition;
-}
-
-protected void initialize(){
-
-}
-
-protected void execute(){
-    Robot.lift.lift(ControlMode.MotionMagic, GoalPosition);
-    // System.out.println("Moving lift to" + GoalPosition);
-}
-
-protected boolean isFinished() {
-    if (RobotMap.Lift1.getSelectedSensorPosition(0) <= GoalPosition + 100 && RobotMap.Lift1.getSelectedSensorPosition(0) >= GoalPosition - 100){
-    return true;
+    public MoveLift(double TargetPosition) {
+        requires(Robot.lift);
+        this.position = RobotMap.Lift1.getSelectedSensorPosition();
+        this.GoalPosition = TargetPosition;
     }
-    else return false;
-    // return false;
-}
-protected void end() {
-    // System.out.println("Going to Hold Position");
-    new LiftHoldPosition();
-}
 
-protected void interrupted(){
-    // System.out.println("Interrupted");
-    end();
-}
+    protected void initialize() {
+
+    }
+
+    protected void execute() {
+        Robot.lift.lift(ControlMode.MotionMagic, GoalPosition);
+        // System.out.println("Moving lift to" + GoalPosition);
+    }
+
+    protected boolean isFinished() {
+        if (RobotMap.Lift1.getSelectedSensorPosition(0) <= GoalPosition + 100
+                && RobotMap.Lift1.getSelectedSensorPosition(0) >= GoalPosition - 100) {
+            return true;
+        } else
+            return false;
+        // return false;
+    }
+
+    protected void end() {
+        // System.out.println("Going to Hold Position");
+        new LiftHoldPosition();
+    }
+
+    protected void interrupted() {
+        // System.out.println("Interrupted");
+        end();
+    }
 
 }
