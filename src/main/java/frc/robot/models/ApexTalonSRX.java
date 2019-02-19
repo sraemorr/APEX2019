@@ -11,7 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import frc.robot.utils.ControllerConfig;
 
-public class BobTalonSRX extends TalonSRX {
+public class ApexTalonSRX extends TalonSRX {
 
 	private int defaultTimeoutMs = 0;
 	private int defaultPidIndex = 0;
@@ -22,9 +22,12 @@ public class BobTalonSRX extends TalonSRX {
 	private FeedbackDevice primaryFeedbackDevice;
 	private FeedbackDevice secondaryFeedbackDevice;
 
-	public BobTalonSRX(int deviceNumber, Boolean isInverted) {
+	public ApexTalonSRX(int deviceNumber, Boolean isInverted) {
 		super(deviceNumber);
 		ControllerConfig.setDriveLeader(this, isInverted);
+	}
+	public ApexTalonSRX(int deviceNumber) {
+		super(deviceNumber);
 	}
 
 	public int getPrimaryPidIndex() {
@@ -303,4 +306,8 @@ public class BobTalonSRX extends TalonSRX {
 	public ErrorCode configMaxIntegralAccumulator(int slotIdx, double iaccum) {
 		return super.configMaxIntegralAccumulator(slotIdx, iaccum, defaultTimeoutMs);
 	}
+
+	// public void setSafetyEnabled(boolean b) {
+	// 	this.setSafetyEnabled(b);
+	// }
 }

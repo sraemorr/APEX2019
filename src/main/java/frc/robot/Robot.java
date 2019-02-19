@@ -54,28 +54,28 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     RobotMap.init();
-    // WatchDog = new Watchdog();
-    // Watchdog.suppressTimeoutMessage(true);
     cargoIntake = new CargoIntake();
     crossbow = new Crossbow();
     driveTrain = new DriveTrain();
     lift = new Lift();
     climber = new Climber();
     oi = new OI();
-    // Watchdog.disabled();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
     booleans= false;
     //CameraServer.getInstance().startAutomaticCapture();
     Compressor compressor = new Compressor (0);
 
+
+
+
     // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     // SmartDashboard.putData("Auto mode", m_chooser);
 
-    compressor.setClosedLoopControl(true);
-
-    driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
-    driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
+    compressor.setClosedLoopControl(false); //TODO 
+  
+    // driveTrain.L1.setSelectedSensorPosition(0, 0, 0);
+    // driveTrain.R1.setSelectedSensorPosition(0, 0, 0);
     lift.Lift1.setSelectedSensorPosition(0);
     // driveTrain.pigeon.setYaw(0,0);
     // new ReleaseLift();
@@ -92,8 +92,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
-    SmartDashConfig.Testing();
-
+    // SmartDashConfig.Testing();
+    SmartDashConfig.LiftTesting();
   }
 
   /**
@@ -109,7 +109,7 @@ public class Robot extends TimedRobot {
   @Override
   public void disabledPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashConfig.Testing();
+    // SmartDashConfig.LiftTesting();
 
   }
 
@@ -148,7 +148,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashConfig.Testing();
+    // SmartDashConfig.Testing();
 
   }
 
@@ -162,8 +162,8 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
     RobotMap.Lift1.setSelectedSensorPosition(0);
-    RobotMap.R1.setSelectedSensorPosition(0);
-    RobotMap.L1.setSelectedSensorPosition(0);
+    // RobotMap.R1.setSelectedSensorPosition(0);
+    // RobotMap.L1.setSelectedSensorPosition(0);
     // new ReleaseLift();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
   }
@@ -174,7 +174,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashConfig.Testing();
+    // SmartDashConfig.LiftTesting();
   }
 
   /**
@@ -183,7 +183,7 @@ public class Robot extends TimedRobot {
   @Override
   public void testPeriodic() {
     Scheduler.getInstance().run();
-    SmartDashConfig.Testing();
+    // SmartDashConfig.Testing();
 
   }
 }

@@ -12,11 +12,8 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 //import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 public class SmartDashConfig {
-    public static void Testing() {
+    public static void LiftTesting() {
         SmartDashboard.putNumber("Lift1 encoder position", RobotMap.Lift1.getSelectedSensorPosition(0));
-        //SmartDashboard.putNumber("L1 encoder position", RobotMap.L1.getSelectedSensorPosition(0));
-        //SmartDashboard.putNumber("R1 encoder position", RobotMap.R1.getSelectedSensorPosition(0));
-        //SmartDashboard.putNumber("RobotAngle",  Robot.driveTrain.getAngle());
 
         SmartDashboard.putData("ZeroLift", new ZeroLiftEncoder());
 
@@ -25,12 +22,14 @@ public class SmartDashConfig {
         SmartDashboard.putData("MoveLift: LV1", new MoveLift(7600));
         SmartDashboard.putData("MoveLift: Bottom", new MoveLift(2100));
 
-
-
-
-
-        //SmartDashboard.putNumber("Lift 1 error", angle - Lift1.getSelectedSensorPosition(0)*360/4096);
+        SmartDashboard.putNumber("Lift 1 error", Robot.lift.Lift1.getClosedLoopError());
        
+    }
+
+    public static void DriveTesting(){
+    //     SmartDashboard.putNumber("L1 encoder position", RobotMap.L1.getSelectedSensorPosition(0));
+    //     SmartDashboard.putNumber("R1 encoder position", RobotMap.R1.getSelectedSensorPosition(0));
+    //     SmartDashboard.putNumber("RobotAngle",  Robot.driveTrain.getAngle());
     }
     
     public static void Comp() {
