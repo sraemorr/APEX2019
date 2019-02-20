@@ -46,7 +46,7 @@ public class ControllerConfig {
     public static void setLiftLead(ApexTalonSRX currentSRX) {
         currentSRX.configFactoryDefault();
         currentSRX.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
-        currentSRX.config_kP(0, .25, 0);
+        currentSRX.config_kP(0, .9, 0);
         currentSRX.config_kI(0, 0, 0);
         currentSRX.config_kD(0, 0, 0);
         currentSRX.config_kF(0, 0, 0);
@@ -66,8 +66,8 @@ public class ControllerConfig {
         currentSRX.configPeakCurrentLimit(40);
         currentSRX.configPeakCurrentDuration(0, 0);
         currentSRX.enableCurrentLimit(true);
-        // currentSRX.configMotionAcceleration(500, 0); //TODO SET THESE
-        // currentSRX.configMotionCruiseVelocity(1000, 0); //TODO SET THESE
+        currentSRX.configMotionAcceleration(500, 0); //TODO SET THESE
+        currentSRX.configMotionCruiseVelocity(300, 0); //TODO SET THESE
         // currentSRX.setSafetyEnabled(false);
 
     }

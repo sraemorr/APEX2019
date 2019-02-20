@@ -17,10 +17,10 @@ public class SmartDashConfig {
 
         SmartDashboard.putData("ZeroLift", new ZeroLiftEncoder());
 
-        SmartDashboard.putData("MoveLift: Top", new MoveLift(19000));
-        SmartDashboard.putData("MoveLift: LV2", new MoveLift(16000));
-        SmartDashboard.putData("MoveLift: LV1", new MoveLift(7600));
-        SmartDashboard.putData("MoveLift: Bottom", new MoveLift(2100));
+        SmartDashboard.putData("MoveLift: Top 19000", new MoveLift(19000));
+        SmartDashboard.putData("MoveLift: LV2 16000", new MoveLift(16000));
+        SmartDashboard.putData("MoveLift: LV1 7600", new MoveLift(7600));
+        SmartDashboard.putData("MoveLift: Bottom 2100", new MoveLift(2100));
 
         SmartDashboard.putNumber("Lift 1 error", Robot.lift.Lift1.getClosedLoopError());
        

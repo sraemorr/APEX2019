@@ -30,6 +30,7 @@ public class MoveLift extends Command {
     protected boolean isFinished() {
         if (RobotMap.Lift1.getSelectedSensorPosition(0) <= GoalPosition + 100
                 && RobotMap.Lift1.getSelectedSensorPosition(0) >= GoalPosition - 100) {
+            System.out.println("Finished moving lift");
             return true;
         } else
             return false;
@@ -37,7 +38,7 @@ public class MoveLift extends Command {
     }
 
     protected void end() {
-        // System.out.println("Going to Hold Position");
+        System.out.println("Done moving lift");
         new LiftHoldPosition();
     }
 

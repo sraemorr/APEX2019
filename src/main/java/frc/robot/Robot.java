@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.Lift;
 import frc.robot.models.SRXGains;
 import frc.robot.RobotMap;
+import frc.robot.commands.MoveLift;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Crossbow;
 import frc.robot.subsystems.Climber;
@@ -23,6 +24,9 @@ import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.utils.SmartDashConfig;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.cameraserver.*;
 // import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 // import frc.robot.commands.ReleaseLift;
@@ -62,7 +66,7 @@ public class Robot extends TimedRobot {
     oi = new OI();
     // Robot.driveTrain.pigeon.setYaw(0, 0);
     booleans= false;
-    //CameraServer.getInstance().startAutomaticCapture();
+    // CameraServer.getInstance().startAutomaticCapture();
     Compressor compressor = new Compressor (0);
 
 
@@ -162,6 +166,7 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
     RobotMap.Lift1.setSelectedSensorPosition(0);
+    lift.lift(ControlMode.PercentOutput, 0);
     // RobotMap.R1.setSelectedSensorPosition(0);
     // RobotMap.L1.setSelectedSensorPosition(0);
     // new ReleaseLift();
@@ -174,7 +179,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    // SmartDashConfig.LiftTesting();
+    SmartDashConfig.LiftTesting();
   }
 
   /**

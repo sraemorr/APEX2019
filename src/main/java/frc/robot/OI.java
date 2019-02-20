@@ -89,22 +89,22 @@ public class OI {
     LT2.whileActive(new CrawlForward());
 
     POVTrigger DPAD_UP2 = new POVTrigger(xbox2, 0, 0);
-    DPAD_UP2.whenPressed(new MoveLift(19000));
-    DPAD_UP2.whenReleased(new LiftHoldPosition());
+    DPAD_UP2.whenActive(new MoveLift(10000));
+    // DPAD_UP2.whenReleased(new LiftHoldPosition());
 
     POVTrigger DPAD_RIGHT2 = new POVTrigger(xbox2, 0, 90);
-    DPAD_RIGHT2.whenPressed(new MoveLift(16000));
-    DPAD_RIGHT2.whenReleased(new LiftHoldPosition());
+    DPAD_RIGHT2.whenActive(new MoveLift(8000));
+    // DPAD_RIGHT2.whenReleased(new LiftHoldPosition());
 
     POVTrigger DPAD_LEFT2 = new POVTrigger(xbox2, 0, 270);
-    DPAD_LEFT2.whenPressed(new MoveLift(7600));
-    DPAD_LEFT2.whenReleased(new LiftHoldPosition());
+    DPAD_LEFT2.whenActive(new MoveLift(5000));
+    // DPAD_LEFT2.whenReleased(new LiftHoldPosition());
 
     // DPAD_LEFT2.whenReleased(new MoveLift(40));
 
     POVTrigger DPAD_DOWN2 = new POVTrigger(xbox2, 0, 180);
-    DPAD_DOWN2.whenPressed(new MoveLift(2100));
-    DPAD_DOWN2.whenReleased(new LiftHoldPosition());
+    DPAD_DOWN2.whenActive(new MoveLift(2100));
+    // DPAD_DOWN2.whenReleased(new LiftHoldPosition());
 
   }
 
